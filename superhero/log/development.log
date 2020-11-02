@@ -1,0 +1,307 @@
+  [1m[35m (2.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.7ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateSuperHeros (20201102172305)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "super_heros" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "city" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20201102172305"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreatePowers (20201102172348)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE TABLE "powers" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "description" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20201102172348"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateSuperHeroPowers (20201102172429)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "super_hero_powers" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "hero_id" integer, "power_id" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20201102172429"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-11-02 17:25:13.486362"], ["updated_at", "2020-11-02 17:25:13.486362"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for ::1 at 2020-11-02 12:42:30 -0500
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ApplicationController#home as HTML
+  Rendering application/home.html.erb within layouts/application
+  Rendered application/home.html.erb within layouts/application (Duration: 5.8ms | Allocations: 364)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /Users/bryce/Development/code/labs/rails_app_m2m/superhero/public/packs
+[Webpacker] Hash: 15d1bb7b54cf6326b9ba
+Version: webpack 4.44.2
+Time: 2934ms
+Built at: 11/02/2020 12:42:35 PM
+                                     Asset       Size       Chunks                         Chunk Names
+    js/application-9afcbb5693aa87623e69.js    124 KiB  application  [emitted] [immutable]  application
+js/application-9afcbb5693aa87623e69.js.map    139 KiB  application  [emitted] [dev]        application
+                             manifest.json  364 bytes               [emitted]              
+Entrypoint application = js/application-9afcbb5693aa87623e69.js js/application-9afcbb5693aa87623e69.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/packs/application.js] 749 bytes {application} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 3 hidden modules
+
+Completed 200 OK in 5733ms (Views: 5711.4ms | ActiveRecord: 0.0ms | Allocations: 21588)
+
+
+Started GET "/about" for ::1 at 2020-11-02 12:42:42 -0500
+Processing by ApplicationController#about as HTML
+  Rendering application/about.html.erb within layouts/application
+  Rendered application/about.html.erb within layouts/application (Duration: 0.7ms | Allocations: 85)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 16ms (Views: 13.1ms | ActiveRecord: 0.0ms | Allocations: 4082)
+
+
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPower Create (0.5ms)[0m  [1m[32mINSERT INTO "powers" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Timeframe Control"], ["description", "It is impossible to begin to learn that which one thinks one already knows."], ["created_at", "2020-11-02 17:56:34.318386"], ["updated_at", "2020-11-02 17:56:34.318386"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPower Create (0.3ms)[0m  [1m[32mINSERT INTO "powers" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Mind Control Resistance"], ["description", "It's not what happens to you, but how you react to it that matters."], ["created_at", "2020-11-02 17:56:34.324420"], ["updated_at", "2020-11-02 17:56:34.324420"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPower Create (0.6ms)[0m  [1m[32mINSERT INTO "powers" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Omnitrix"], ["description", "Control thy passions lest they take vengence on thee."], ["created_at", "2020-11-02 17:56:34.329139"], ["updated_at", "2020-11-02 17:56:34.329139"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPower Create (0.3ms)[0m  [1m[32mINSERT INTO "powers" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Jump"], ["description", "Rhetoric is the art of ruling the minds of men."], ["created_at", "2020-11-02 17:56:34.334478"], ["updated_at", "2020-11-02 17:56:34.334478"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPower Create (0.4ms)[0m  [1m[32mINSERT INTO "powers" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Invulnerability"], ["description", "Good habits formed at youth make all the difference."], ["created_at", "2020-11-02 17:56:34.339154"], ["updated_at", "2020-11-02 17:56:34.339154"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPower Create (0.5ms)[0m  [1m[32mINSERT INTO "powers" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Mind Control Resistance"], ["description", "Love is composed of a single soul inhabiting two bodies."], ["created_at", "2020-11-02 17:56:34.344607"], ["updated_at", "2020-11-02 17:56:34.344607"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPower Create (0.3ms)[0m  [1m[32mINSERT INTO "powers" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Clairvoyance"], ["description", "Love is composed of a single soul inhabiting two bodies."], ["created_at", "2020-11-02 17:56:34.349841"], ["updated_at", "2020-11-02 17:56:34.349841"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPower Create (0.4ms)[0m  [1m[32mINSERT INTO "powers" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Hypnokinesis"], ["description", "Control thy passions lest they take vengence on thee."], ["created_at", "2020-11-02 17:56:34.354530"], ["updated_at", "2020-11-02 17:56:34.354530"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPower Create (0.4ms)[0m  [1m[32mINSERT INTO "powers" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Adaptation"], ["description", "There was never a genius without a tincture of madness."], ["created_at", "2020-11-02 17:56:34.359584"], ["updated_at", "2020-11-02 17:56:34.359584"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPower Create (0.5ms)[0m  [1m[32mINSERT INTO "powers" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Healing Factor"], ["description", "The unexamined life is not worth living."], ["created_at", "2020-11-02 17:56:34.364694"], ["updated_at", "2020-11-02 17:56:34.364694"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPower Create (0.4ms)[0m  [1m[32mINSERT INTO "powers" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Umbrakinesis"], ["description", "Beware the barrenness of a busy life."], ["created_at", "2020-11-02 17:58:05.362085"], ["updated_at", "2020-11-02 17:58:05.362085"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPower Create (0.3ms)[0m  [1m[32mINSERT INTO "powers" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Seismic Power"], ["description", "Pleasure in the job puts perfection in the work."], ["created_at", "2020-11-02 17:58:05.366925"], ["updated_at", "2020-11-02 17:58:05.366925"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPower Create (0.4ms)[0m  [1m[32mINSERT INTO "powers" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Nova Force"], ["description", "Philosophy is the highest music."], ["created_at", "2020-11-02 17:58:05.371602"], ["updated_at", "2020-11-02 17:58:05.371602"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPower Create (0.4ms)[0m  [1m[32mINSERT INTO "powers" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Radiation Absorption"], ["description", "A few vices are sufficient to darken many virtues."], ["created_at", "2020-11-02 17:58:05.376262"], ["updated_at", "2020-11-02 17:58:05.376262"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPower Create (0.3ms)[0m  [1m[32mINSERT INTO "powers" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Animal Control"], ["description", "The virtue of justice consists in moderation, as regulated by wisdom."], ["created_at", "2020-11-02 17:58:05.380710"], ["updated_at", "2020-11-02 17:58:05.380710"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPower Create (0.3ms)[0m  [1m[32mINSERT INTO "powers" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Cross-Dimensional Awareness"], ["description", "Quality is not an act, it is a habit."], ["created_at", "2020-11-02 17:58:05.384933"], ["updated_at", "2020-11-02 17:58:05.384933"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPower Create (0.3ms)[0m  [1m[32mINSERT INTO "powers" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Power Cosmic"], ["description", "There was never a genius without a tincture of madness."], ["created_at", "2020-11-02 17:58:05.389084"], ["updated_at", "2020-11-02 17:58:05.389084"]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPower Create (0.3ms)[0m  [1m[32mINSERT INTO "powers" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Durability"], ["description", "Pleasure in the job puts perfection in the work."], ["created_at", "2020-11-02 17:58:05.392750"], ["updated_at", "2020-11-02 17:58:05.392750"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPower Create (0.4ms)[0m  [1m[32mINSERT INTO "powers" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Animal Attributes"], ["description", "Know how to listen, and you will profit even from those who talk badly."], ["created_at", "2020-11-02 17:58:05.396952"], ["updated_at", "2020-11-02 17:58:05.396952"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPower Create (0.3ms)[0m  [1m[32mINSERT INTO "powers" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Weapon-based Powers"], ["description", "Pleasure in the job puts perfection in the work."], ["created_at", "2020-11-02 17:58:05.412591"], ["updated_at", "2020-11-02 17:58:05.412591"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mSuperHero Create (0.3ms)[0m  [1m[32mINSERT INTO "super_heros" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "The Falcon Strange"], ["created_at", "2020-11-02 17:58:05.422156"], ["updated_at", "2020-11-02 17:58:05.422156"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mPower Load (0.2ms)[0m  [1m[34mSELECT "powers".* FROM "powers"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPower Create (0.4ms)[0m  [1m[32mINSERT INTO "powers" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Intangibility"], ["description", "Quality is not an act, it is a habit."], ["created_at", "2020-11-02 17:58:25.269443"], ["updated_at", "2020-11-02 17:58:25.269443"]]
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPower Create (0.3ms)[0m  [1m[32mINSERT INTO "powers" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Molecular Immobilization"], ["description", "The mind is not a vessel to be filled but a fire to be kindled."], ["created_at", "2020-11-02 17:58:25.274707"], ["updated_at", "2020-11-02 17:58:25.274707"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPower Create (0.3ms)[0m  [1m[32mINSERT INTO "powers" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Camouflage"], ["description", "The unexamined life is not worth living."], ["created_at", "2020-11-02 17:58:25.279187"], ["updated_at", "2020-11-02 17:58:25.279187"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPower Create (0.3ms)[0m  [1m[32mINSERT INTO "powers" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Wallcrawling"], ["description", "The secret to humor is surprise."], ["created_at", "2020-11-02 17:58:25.283101"], ["updated_at", "2020-11-02 17:58:25.283101"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPower Create (0.3ms)[0m  [1m[32mINSERT INTO "powers" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Hypnokinesis"], ["description", "Love is composed of a single soul inhabiting two bodies."], ["created_at", "2020-11-02 17:58:25.286727"], ["updated_at", "2020-11-02 17:58:25.286727"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPower Create (0.4ms)[0m  [1m[32mINSERT INTO "powers" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Underwater breathing"], ["description", "The unexamined life is not worth living."], ["created_at", "2020-11-02 17:58:25.290846"], ["updated_at", "2020-11-02 17:58:25.290846"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPower Create (0.3ms)[0m  [1m[32mINSERT INTO "powers" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Insanity"], ["description", "Pleasure in the job puts perfection in the work."], ["created_at", "2020-11-02 17:58:25.295182"], ["updated_at", "2020-11-02 17:58:25.295182"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPower Create (0.3ms)[0m  [1m[32mINSERT INTO "powers" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Audiokinesis"], ["description", "The unexamined life is not worth living."], ["created_at", "2020-11-02 17:58:25.299616"], ["updated_at", "2020-11-02 17:58:25.299616"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPower Create (0.6ms)[0m  [1m[32mINSERT INTO "powers" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Flight"], ["description", "The virtue of justice consists in moderation, as regulated by wisdom."], ["created_at", "2020-11-02 17:58:25.304153"], ["updated_at", "2020-11-02 17:58:25.304153"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPower Create (0.3ms)[0m  [1m[32mINSERT INTO "powers" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Grim Reaping"], ["description", "There was never a genius without a tincture of madness."], ["created_at", "2020-11-02 17:58:25.319059"], ["updated_at", "2020-11-02 17:58:25.319059"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mSuperHero Create (0.4ms)[0m  [1m[32mINSERT INTO "super_heros" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Illustrious Ripcord"], ["created_at", "2020-11-02 17:58:25.328278"], ["updated_at", "2020-11-02 17:58:25.328278"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mPower Load (0.2ms)[0m  [1m[34mSELECT "powers".* FROM "powers"[0m
+  [1m[36mPower Load (0.3ms)[0m  [1m[34mSELECT "powers".* FROM "powers" WHERE "powers"."name" = ? LIMIT ?[0m  [["name", "Underwater breathing"], ["LIMIT", 1]]
+  ↳ app/models/super_hero.rb:7:in `add_power'
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPower Create (0.5ms)[0m  [1m[32mINSERT INTO "powers" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Projection"], ["description", "Philosophy is the highest music."], ["created_at", "2020-11-02 17:58:53.600610"], ["updated_at", "2020-11-02 17:58:53.600610"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPower Create (0.3ms)[0m  [1m[32mINSERT INTO "powers" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Umbrakinesis"], ["description", "Quality is not an act, it is a habit."], ["created_at", "2020-11-02 17:58:53.605935"], ["updated_at", "2020-11-02 17:58:53.605935"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPower Create (0.4ms)[0m  [1m[32mINSERT INTO "powers" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Changing Armor"], ["description", "The unexamined life is not worth living."], ["created_at", "2020-11-02 17:58:53.610015"], ["updated_at", "2020-11-02 17:58:53.610015"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPower Create (0.3ms)[0m  [1m[32mINSERT INTO "powers" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Psychokinesis"], ["description", "It is impossible to begin to learn that which one thinks one already knows."], ["created_at", "2020-11-02 17:58:53.614240"], ["updated_at", "2020-11-02 17:58:53.614240"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPower Create (0.3ms)[0m  [1m[32mINSERT INTO "powers" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Adaptation"], ["description", "Most people would rather give than get affection."], ["created_at", "2020-11-02 17:58:53.618230"], ["updated_at", "2020-11-02 17:58:53.618230"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPower Create (0.4ms)[0m  [1m[32mINSERT INTO "powers" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Power Nullifier"], ["description", "Philosophy is the highest music."], ["created_at", "2020-11-02 17:58:53.622156"], ["updated_at", "2020-11-02 17:58:53.622156"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPower Create (0.3ms)[0m  [1m[32mINSERT INTO "powers" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Hyperkinesis"], ["description", "Dignity does not consist in possessing honors, but in deserving them."], ["created_at", "2020-11-02 17:58:53.626546"], ["updated_at", "2020-11-02 17:58:53.626546"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPower Create (0.3ms)[0m  [1m[32mINSERT INTO "powers" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Radar Sense"], ["description", "The virtue of justice consists in moderation, as regulated by wisdom."], ["created_at", "2020-11-02 17:58:53.630367"], ["updated_at", "2020-11-02 17:58:53.630367"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPower Create (0.4ms)[0m  [1m[32mINSERT INTO "powers" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Biokinesis"], ["description", "Good habits formed at youth make all the difference."], ["created_at", "2020-11-02 17:58:53.633811"], ["updated_at", "2020-11-02 17:58:53.633811"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPower Create (0.4ms)[0m  [1m[32mINSERT INTO "powers" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Empathy"], ["description", "The virtue of justice consists in moderation, as regulated by wisdom."], ["created_at", "2020-11-02 17:58:53.638750"], ["updated_at", "2020-11-02 17:58:53.638750"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mSuperHero Create (0.3ms)[0m  [1m[32mINSERT INTO "super_heros" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Speedy II"], ["created_at", "2020-11-02 17:58:53.659146"], ["updated_at", "2020-11-02 17:58:53.659146"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mPower Load (0.2ms)[0m  [1m[34mSELECT "powers".* FROM "powers"[0m
+  [1m[36mPower Load (0.3ms)[0m  [1m[34mSELECT "powers".* FROM "powers" WHERE "powers"."name" = ? LIMIT ?[0m  [["name", "Umbrakinesis"], ["LIMIT", 1]]
+  ↳ app/models/super_hero.rb:7:in `add_power'
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPower Create (0.5ms)[0m  [1m[32mINSERT INTO "powers" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Molecular Immobilization"], ["description", "Philosophy is the highest music."], ["created_at", "2020-11-02 17:59:33.028919"], ["updated_at", "2020-11-02 17:59:33.028919"]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPower Create (0.4ms)[0m  [1m[32mINSERT INTO "powers" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Animal Control"], ["description", "Beware the barrenness of a busy life."], ["created_at", "2020-11-02 17:59:33.034924"], ["updated_at", "2020-11-02 17:59:33.034924"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPower Create (0.3ms)[0m  [1m[32mINSERT INTO "powers" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Separation"], ["description", "Good habits formed at youth make all the difference."], ["created_at", "2020-11-02 17:59:33.039511"], ["updated_at", "2020-11-02 17:59:33.039511"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPower Create (0.3ms)[0m  [1m[32mINSERT INTO "powers" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Changing Armor"], ["description", "A few vices are sufficient to darken many virtues."], ["created_at", "2020-11-02 17:59:33.043939"], ["updated_at", "2020-11-02 17:59:33.043939"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPower Create (0.3ms)[0m  [1m[32mINSERT INTO "powers" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Hydrokinesis"], ["description", "Beware the barrenness of a busy life."], ["created_at", "2020-11-02 17:59:33.048572"], ["updated_at", "2020-11-02 17:59:33.048572"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPower Create (0.3ms)[0m  [1m[32mINSERT INTO "powers" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Toxikinesis"], ["description", "It is impossible to begin to learn that which one thinks one already knows."], ["created_at", "2020-11-02 17:59:33.052919"], ["updated_at", "2020-11-02 17:59:33.052919"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPower Create (0.3ms)[0m  [1m[32mINSERT INTO "powers" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Energy Blasts"], ["description", "A few vices are sufficient to darken many virtues."], ["created_at", "2020-11-02 17:59:33.056960"], ["updated_at", "2020-11-02 17:59:33.056960"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPower Create (0.3ms)[0m  [1m[32mINSERT INTO "powers" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Illusions"], ["description", "The secret to humor is surprise."], ["created_at", "2020-11-02 17:59:33.061022"], ["updated_at", "2020-11-02 17:59:33.061022"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPower Create (0.3ms)[0m  [1m[32mINSERT INTO "powers" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Vision - X-Ray"], ["description", "Dignity does not consist in possessing honors, but in deserving them."], ["created_at", "2020-11-02 17:59:33.064997"], ["updated_at", "2020-11-02 17:59:33.064997"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPower Create (0.4ms)[0m  [1m[32mINSERT INTO "powers" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Technopath/Cyberpath"], ["description", "Most people would rather give than get affection."], ["created_at", "2020-11-02 17:59:33.069110"], ["updated_at", "2020-11-02 17:59:33.069110"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mSuperHero Create (0.3ms)[0m  [1m[32mINSERT INTO "super_heros" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Colossus"], ["created_at", "2020-11-02 17:59:33.088449"], ["updated_at", "2020-11-02 17:59:33.088449"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mPower Load (0.2ms)[0m  [1m[34mSELECT "powers".* FROM "powers"[0m
+  [1m[36mPower Load (0.1ms)[0m  [1m[34mSELECT "powers".* FROM "powers" WHERE "powers"."title" = ? LIMIT ?[0m  [["title", "Underwater breathing"], ["LIMIT", 1]]
+  ↳ app/models/super_hero.rb:7:in `add_power'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mSuperHero Create (0.3ms)[0m  [1m[32mINSERT INTO "super_heros" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Renata Soliz"], ["created_at", "2020-11-02 17:59:33.117881"], ["updated_at", "2020-11-02 17:59:33.117881"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mPower Load (0.2ms)[0m  [1m[34mSELECT "powers".* FROM "powers"[0m
+  [1m[36mPower Load (0.1ms)[0m  [1m[34mSELECT "powers".* FROM "powers" WHERE "powers"."title" = ? LIMIT ?[0m  [["title", "Healing Factor"], ["LIMIT", 1]]
+  ↳ app/models/super_hero.rb:7:in `add_power'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mSuperHero Create (0.3ms)[0m  [1m[32mINSERT INTO "super_heros" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Ares Boy"], ["created_at", "2020-11-02 17:59:33.124743"], ["updated_at", "2020-11-02 17:59:33.124743"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mPower Load (0.2ms)[0m  [1m[34mSELECT "powers".* FROM "powers"[0m
+  [1m[36mPower Load (0.1ms)[0m  [1m[34mSELECT "powers".* FROM "powers" WHERE "powers"."title" = ? LIMIT ?[0m  [["title", "Toxikinesis"], ["LIMIT", 1]]
+  ↳ app/models/super_hero.rb:7:in `add_power'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mSuperHero Create (0.4ms)[0m  [1m[32mINSERT INTO "super_heros" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Agent Darkside"], ["created_at", "2020-11-02 17:59:33.131996"], ["updated_at", "2020-11-02 17:59:33.131996"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mPower Load (0.3ms)[0m  [1m[34mSELECT "powers".* FROM "powers"[0m
+  [1m[36mPower Load (0.1ms)[0m  [1m[34mSELECT "powers".* FROM "powers" WHERE "powers"."title" = ? LIMIT ?[0m  [["title", "Wallcrawling"], ["LIMIT", 1]]
+  ↳ app/models/super_hero.rb:7:in `add_power'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mSuperHero Create (0.3ms)[0m  [1m[32mINSERT INTO "super_heros" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Rogue"], ["created_at", "2020-11-02 17:59:33.139699"], ["updated_at", "2020-11-02 17:59:33.139699"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mPower Load (0.2ms)[0m  [1m[34mSELECT "powers".* FROM "powers"[0m
+  [1m[36mPower Load (0.1ms)[0m  [1m[34mSELECT "powers".* FROM "powers" WHERE "powers"."title" = ? LIMIT ?[0m  [["title", "Weapon-based Powers"], ["LIMIT", 1]]
+  ↳ app/models/super_hero.rb:7:in `add_power'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mSuperHero Create (0.3ms)[0m  [1m[32mINSERT INTO "super_heros" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "A-Bomb"], ["created_at", "2020-11-02 17:59:33.146733"], ["updated_at", "2020-11-02 17:59:33.146733"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mPower Load (0.2ms)[0m  [1m[34mSELECT "powers".* FROM "powers"[0m
+  [1m[36mPower Load (0.1ms)[0m  [1m[34mSELECT "powers".* FROM "powers" WHERE "powers"."title" = ? LIMIT ?[0m  [["title", "Grim Reaping"], ["LIMIT", 1]]
+  ↳ app/models/super_hero.rb:7:in `add_power'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mSuperHero Create (0.4ms)[0m  [1m[32mINSERT INTO "super_heros" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Booster Gold Claw"], ["created_at", "2020-11-02 17:59:33.154297"], ["updated_at", "2020-11-02 17:59:33.154297"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mPower Load (0.3ms)[0m  [1m[34mSELECT "powers".* FROM "powers"[0m
+  [1m[36mPower Load (0.1ms)[0m  [1m[34mSELECT "powers".* FROM "powers" WHERE "powers"."title" = ? LIMIT ?[0m  [["title", "Hypnokinesis"], ["LIMIT", 1]]
+  ↳ app/models/super_hero.rb:7:in `add_power'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mSuperHero Create (0.4ms)[0m  [1m[32mINSERT INTO "super_heros" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Match Knight"], ["created_at", "2020-11-02 17:59:33.162038"], ["updated_at", "2020-11-02 17:59:33.162038"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mPower Load (0.3ms)[0m  [1m[34mSELECT "powers".* FROM "powers"[0m
+  [1m[36mPower Load (0.1ms)[0m  [1m[34mSELECT "powers".* FROM "powers" WHERE "powers"."title" = ? LIMIT ?[0m  [["title", "Adaptation"], ["LIMIT", 1]]
+  ↳ app/models/super_hero.rb:7:in `add_power'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mSuperHero Create (0.3ms)[0m  [1m[32mINSERT INTO "super_heros" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Doctor Chameleon II"], ["created_at", "2020-11-02 17:59:33.170176"], ["updated_at", "2020-11-02 17:59:33.170176"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mPower Load (0.3ms)[0m  [1m[34mSELECT "powers".* FROM "powers"[0m
+  [1m[36mPower Load (0.3ms)[0m  [1m[34mSELECT "powers".* FROM "powers" WHERE "powers"."title" = ? LIMIT ?[0m  [["title", "Technopath/Cyberpath"], ["LIMIT", 1]]
+  ↳ app/models/super_hero.rb:7:in `add_power'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mSuperHero Create (0.5ms)[0m  [1m[32mINSERT INTO "super_heros" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Ammo the Fated"], ["created_at", "2020-11-02 17:59:33.178782"], ["updated_at", "2020-11-02 17:59:33.178782"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mPower Load (0.3ms)[0m  [1m[34mSELECT "powers".* FROM "powers"[0m
+  [1m[36mPower Load (0.1ms)[0m  [1m[34mSELECT "powers".* FROM "powers" WHERE "powers"."title" = ? LIMIT ?[0m  [["title", "Projection"], ["LIMIT", 1]]
+  ↳ app/models/super_hero.rb:7:in `add_power'
