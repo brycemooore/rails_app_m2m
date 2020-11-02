@@ -1,6 +1,6 @@
 class PowersController < ApplicationController
 
-    before_action :set_power, only: [:show]
+    before_action :set_power, only: [:show, :edit, :update, :destroy]
 
     def index
         @powers = Power.all 
@@ -18,6 +18,20 @@ class PowersController < ApplicationController
         power = Power.create(get_params)
         redirect_to power_path(power.id)
     end 
+
+    def edit
+
+    end 
+
+    def update
+        @power.update(get_params)
+        redirect_to power_path(@power.id)
+    end
+
+    def destroy
+        @power.delete
+        redirect_to powers_path
+    end
 
     private
 

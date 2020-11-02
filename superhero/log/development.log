@@ -3869,3 +3869,1129 @@ Processing by HerosController#index as HTML
 Completed 200 OK in 9ms (Views: 8.3ms | ActiveRecord: 0.2ms | Allocations: 4995)
 
 
+Started GET "/heros/4" for ::1 at 2020-11-02 16:10:21 -0500
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by HerosController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mHero Load (0.2ms)[0m  [1m[34mSELECT "heros".* FROM "heros" WHERE "heros"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/heros_controller.rb:35:in `set_super_hero'
+  Rendering heros/show.html.erb within layouts/application
+  [1m[36mPower Load (0.2ms)[0m  [1m[34mSELECT "powers".* FROM "powers" INNER JOIN "hero_powers" ON "powers"."id" = "hero_powers"."power_id" WHERE "hero_powers"."hero_id" = ?[0m  [["hero_id", 4]]
+  ↳ app/views/heros/show.html.erb:5
+  Rendered heros/show.html.erb within layouts/application (Duration: 13.2ms | Allocations: 8808)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 43ms (Views: 18.8ms | ActiveRecord: 2.2ms | Allocations: 19119)
+
+
+Started GET "/heros/4/edit" for ::1 at 2020-11-02 16:10:23 -0500
+Processing by HerosController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mHero Load (0.3ms)[0m  [1m[34mSELECT "heros".* FROM "heros" WHERE "heros"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/heros_controller.rb:35:in `set_super_hero'
+  Rendering heros/edit.html.erb within layouts/application
+  Rendered heros/_form.html.erb (Duration: 1.6ms | Allocations: 1205)
+  Rendered heros/edit.html.erb within layouts/application (Duration: 2.9ms | Allocations: 1506)
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.3ms | Allocations: 2601)
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    1: <%= form_for @hero do |p| %>
+    2:     <%= p.label :name%>
+    3:     <%= p.text_field :name%>
+    4:     <%= p.label :city%>
+  
+app/views/heros/_form.html.erb:1
+app/views/heros/edit.html.erb:3
+Started GET "/heros/4/edit" for ::1 at 2020-11-02 16:11:05 -0500
+Processing by HerosController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mHero Load (0.2ms)[0m  [1m[34mSELECT "heros".* FROM "heros" WHERE "heros"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/heros_controller.rb:35:in `set_super_hero'
+  Rendering heros/edit.html.erb within layouts/application
+  Rendered heros/_form.html.erb (Duration: 2.4ms | Allocations: 877)
+  Rendered heros/edit.html.erb within layouts/application (Duration: 3.4ms | Allocations: 1172)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 15ms (Views: 12.2ms | ActiveRecord: 0.2ms | Allocations: 6585)
+
+
+Started PATCH "/heros/4" for ::1 at 2020-11-02 16:11:18 -0500
+Processing by HerosController#update as HTML
+  Parameters: {"authenticity_token"=>"SmRTOE5XdlldwF5DX2xSiWlw5XojG+940ecc3QqXEvZQBvqwTGPKz8JSXyi+mrWcLcktU7+YPIBtjirbmkiKuQ==", "hero"=>{"name"=>"Captain Archangel X", "city"=>"NYC"}, "commit"=>"Add Hero", "id"=>"4"}
+  [1m[36mHero Load (0.4ms)[0m  [1m[34mSELECT "heros".* FROM "heros"[0m
+  ↳ app/controllers/heros_controller.rb:24:in `update'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/heros_controller.rb:24:in `update'
+  [1m[36mHero Update (0.5ms)[0m  [1m[33mUPDATE "heros" SET "name" = ?, "city" = ?, "updated_at" = ? WHERE "heros"."id" = ?[0m  [["name", "Captain Archangel X"], ["city", "NYC"], ["updated_at", "2020-11-02 21:11:18.339074"], ["id", 1]]
+  ↳ app/controllers/heros_controller.rb:24:in `update'
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/heros_controller.rb:24:in `update'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/heros_controller.rb:24:in `update'
+  [1m[36mHero Update (0.6ms)[0m  [1m[33mUPDATE "heros" SET "name" = ?, "city" = ?, "updated_at" = ? WHERE "heros"."id" = ?[0m  [["name", "Captain Archangel X"], ["city", "NYC"], ["updated_at", "2020-11-02 21:11:18.343079"], ["id", 2]]
+  ↳ app/controllers/heros_controller.rb:24:in `update'
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/heros_controller.rb:24:in `update'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/heros_controller.rb:24:in `update'
+  [1m[36mHero Update (0.3ms)[0m  [1m[33mUPDATE "heros" SET "name" = ?, "city" = ?, "updated_at" = ? WHERE "heros"."id" = ?[0m  [["name", "Captain Archangel X"], ["city", "NYC"], ["updated_at", "2020-11-02 21:11:18.347635"], ["id", 3]]
+  ↳ app/controllers/heros_controller.rb:24:in `update'
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/heros_controller.rb:24:in `update'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/heros_controller.rb:24:in `update'
+  [1m[36mHero Update (0.4ms)[0m  [1m[33mUPDATE "heros" SET "city" = ?, "updated_at" = ? WHERE "heros"."id" = ?[0m  [["city", "NYC"], ["updated_at", "2020-11-02 21:11:18.350990"], ["id", 4]]
+  ↳ app/controllers/heros_controller.rb:24:in `update'
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/heros_controller.rb:24:in `update'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/heros_controller.rb:24:in `update'
+  [1m[36mHero Update (0.3ms)[0m  [1m[33mUPDATE "heros" SET "name" = ?, "city" = ?, "updated_at" = ? WHERE "heros"."id" = ?[0m  [["name", "Captain Archangel X"], ["city", "NYC"], ["updated_at", "2020-11-02 21:11:18.356772"], ["id", 5]]
+  ↳ app/controllers/heros_controller.rb:24:in `update'
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/heros_controller.rb:24:in `update'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/heros_controller.rb:24:in `update'
+  [1m[36mHero Update (0.3ms)[0m  [1m[33mUPDATE "heros" SET "name" = ?, "city" = ?, "updated_at" = ? WHERE "heros"."id" = ?[0m  [["name", "Captain Archangel X"], ["city", "NYC"], ["updated_at", "2020-11-02 21:11:18.360709"], ["id", 6]]
+  ↳ app/controllers/heros_controller.rb:24:in `update'
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/heros_controller.rb:24:in `update'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/heros_controller.rb:24:in `update'
+  [1m[36mHero Update (0.3ms)[0m  [1m[33mUPDATE "heros" SET "name" = ?, "city" = ?, "updated_at" = ? WHERE "heros"."id" = ?[0m  [["name", "Captain Archangel X"], ["city", "NYC"], ["updated_at", "2020-11-02 21:11:18.364175"], ["id", 7]]
+  ↳ app/controllers/heros_controller.rb:24:in `update'
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/heros_controller.rb:24:in `update'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/heros_controller.rb:24:in `update'
+  [1m[36mHero Update (0.3ms)[0m  [1m[33mUPDATE "heros" SET "name" = ?, "city" = ?, "updated_at" = ? WHERE "heros"."id" = ?[0m  [["name", "Captain Archangel X"], ["city", "NYC"], ["updated_at", "2020-11-02 21:11:18.367308"], ["id", 8]]
+  ↳ app/controllers/heros_controller.rb:24:in `update'
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/heros_controller.rb:24:in `update'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/heros_controller.rb:24:in `update'
+  [1m[36mHero Update (0.5ms)[0m  [1m[33mUPDATE "heros" SET "name" = ?, "city" = ?, "updated_at" = ? WHERE "heros"."id" = ?[0m  [["name", "Captain Archangel X"], ["city", "NYC"], ["updated_at", "2020-11-02 21:11:18.370763"], ["id", 9]]
+  ↳ app/controllers/heros_controller.rb:24:in `update'
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/heros_controller.rb:24:in `update'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/heros_controller.rb:24:in `update'
+  [1m[36mHero Update (0.5ms)[0m  [1m[33mUPDATE "heros" SET "name" = ?, "city" = ?, "updated_at" = ? WHERE "heros"."id" = ?[0m  [["name", "Captain Archangel X"], ["city", "NYC"], ["updated_at", "2020-11-02 21:11:18.375334"], ["id", 10]]
+  ↳ app/controllers/heros_controller.rb:24:in `update'
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/heros_controller.rb:24:in `update'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/heros_controller.rb:24:in `update'
+  [1m[36mHero Update (0.4ms)[0m  [1m[33mUPDATE "heros" SET "name" = ?, "city" = ?, "updated_at" = ? WHERE "heros"."id" = ?[0m  [["name", "Captain Archangel X"], ["city", "NYC"], ["updated_at", "2020-11-02 21:11:18.380922"], ["id", 11]]
+  ↳ app/controllers/heros_controller.rb:24:in `update'
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/heros_controller.rb:24:in `update'
+Completed 500 Internal Server Error in 50ms (ActiveRecord: 14.1ms | Allocations: 30645)
+
+
+  
+NoMethodError (undefined method `id' for #<Array:0x00007ff0947cac18>):
+  
+app/controllers/heros_controller.rb:25:in `update'
+Started PATCH "/heros/4" for ::1 at 2020-11-02 16:12:46 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by HerosController#update as HTML
+  Parameters: {"authenticity_token"=>"SmRTOE5XdlldwF5DX2xSiWlw5XojG+940ecc3QqXEvZQBvqwTGPKz8JSXyi+mrWcLcktU7+YPIBtjirbmkiKuQ==", "hero"=>{"name"=>"Captain Archangel X", "city"=>"NYC"}, "commit"=>"Add Hero", "id"=>"4"}
+  [1m[36mHero Load (0.2ms)[0m  [1m[34mSELECT "heros".* FROM "heros" WHERE "heros"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/heros_controller.rb:36:in `set_super_hero'
+Redirected to http://localhost:3000/heros/4
+Completed 302 Found in 14ms (ActiveRecord: 1.3ms | Allocations: 6215)
+
+
+Started GET "/heros/4" for ::1 at 2020-11-02 16:12:46 -0500
+Processing by HerosController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mHero Load (0.2ms)[0m  [1m[34mSELECT "heros".* FROM "heros" WHERE "heros"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/heros_controller.rb:36:in `set_super_hero'
+  Rendering heros/show.html.erb within layouts/application
+  [1m[36mPower Load (0.2ms)[0m  [1m[34mSELECT "powers".* FROM "powers" INNER JOIN "hero_powers" ON "powers"."id" = "hero_powers"."power_id" WHERE "hero_powers"."hero_id" = ?[0m  [["hero_id", 4]]
+  ↳ app/views/heros/show.html.erb:5
+  Rendered heros/show.html.erb within layouts/application (Duration: 14.9ms | Allocations: 8850)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 26ms (Views: 21.4ms | ActiveRecord: 1.5ms | Allocations: 13539)
+
+
+Started GET "/heros" for ::1 at 2020-11-02 16:12:49 -0500
+Processing by HerosController#index as HTML
+  Rendering heros/index.html.erb within layouts/application
+  [1m[36mHero Load (0.3ms)[0m  [1m[34mSELECT "heros".* FROM "heros"[0m
+  ↳ app/views/heros/index.html.erb:4
+  Rendered heros/index.html.erb within layouts/application (Duration: 3.7ms | Allocations: 1184)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 16ms (Views: 14.1ms | ActiveRecord: 0.3ms | Allocations: 5280)
+
+
+Started GET "/heros/1" for ::1 at 2020-11-02 16:12:53 -0500
+Processing by HerosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHero Load (0.3ms)[0m  [1m[34mSELECT "heros".* FROM "heros" WHERE "heros"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/heros_controller.rb:36:in `set_super_hero'
+  Rendering heros/show.html.erb within layouts/application
+  [1m[36mPower Load (0.1ms)[0m  [1m[34mSELECT "powers".* FROM "powers" INNER JOIN "hero_powers" ON "powers"."id" = "hero_powers"."power_id" WHERE "hero_powers"."hero_id" = ?[0m  [["hero_id", 1]]
+  ↳ app/views/heros/show.html.erb:5
+  Rendered heros/show.html.erb within layouts/application (Duration: 2.0ms | Allocations: 1029)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 23ms (Views: 20.5ms | ActiveRecord: 0.4ms | Allocations: 5507)
+
+
+Started GET "/heros/2" for ::1 at 2020-11-02 16:14:57 -0500
+Processing by HerosController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mHero Load (0.4ms)[0m  [1m[34mSELECT "heros".* FROM "heros" WHERE "heros"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/heros_controller.rb:36:in `set_super_hero'
+  Rendering heros/show.html.erb within layouts/application
+  [1m[36mPower Load (0.2ms)[0m  [1m[34mSELECT "powers".* FROM "powers" INNER JOIN "hero_powers" ON "powers"."id" = "hero_powers"."power_id" WHERE "hero_powers"."hero_id" = ?[0m  [["hero_id", 2]]
+  ↳ app/views/heros/show.html.erb:5
+  Rendered heros/show.html.erb within layouts/application (Duration: 2.9ms | Allocations: 1026)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 12ms (Views: 9.2ms | ActiveRecord: 0.6ms | Allocations: 5513)
+
+
+Started GET "/heros/2/edit" for ::1 at 2020-11-02 16:15:00 -0500
+Processing by HerosController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mHero Load (0.2ms)[0m  [1m[34mSELECT "heros".* FROM "heros" WHERE "heros"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/heros_controller.rb:36:in `set_super_hero'
+  Rendering heros/edit.html.erb within layouts/application
+  Rendered heros/_form.html.erb (Duration: 2.9ms | Allocations: 679)
+  Rendered heros/edit.html.erb within layouts/application (Duration: 3.3ms | Allocations: 743)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 15ms (Views: 11.7ms | ActiveRecord: 0.2ms | Allocations: 5232)
+
+
+Started PATCH "/heros/2" for ::1 at 2020-11-02 16:15:12 -0500
+Processing by HerosController#update as HTML
+  Parameters: {"authenticity_token"=>"QF14O7z1tic2ostiG1wT1/epRqygjK0ljBzQuuRlBgJdcrICGTjYCqkQj1JWobs2q8rGe76YSK7LxhlwDbTxZw==", "hero"=>{"name"=>"Captain Archangel Z", "city"=>"NYC"}, "commit"=>"Add Hero", "id"=>"2"}
+  [1m[36mHero Load (0.2ms)[0m  [1m[34mSELECT "heros".* FROM "heros" WHERE "heros"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/heros_controller.rb:36:in `set_super_hero'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/heros_controller.rb:25:in `update'
+  [1m[36mHero Update (0.4ms)[0m  [1m[33mUPDATE "heros" SET "name" = ?, "updated_at" = ? WHERE "heros"."id" = ?[0m  [["name", "Captain Archangel Z"], ["updated_at", "2020-11-02 21:15:12.302897"], ["id", 2]]
+  ↳ app/controllers/heros_controller.rb:25:in `update'
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/heros_controller.rb:25:in `update'
+Redirected to http://localhost:3000/heros/2
+Completed 302 Found in 7ms (ActiveRecord: 1.7ms | Allocations: 3327)
+
+
+Started GET "/heros/2" for ::1 at 2020-11-02 16:15:12 -0500
+Processing by HerosController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mHero Load (0.2ms)[0m  [1m[34mSELECT "heros".* FROM "heros" WHERE "heros"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/heros_controller.rb:36:in `set_super_hero'
+  Rendering heros/show.html.erb within layouts/application
+  [1m[36mPower Load (0.2ms)[0m  [1m[34mSELECT "powers".* FROM "powers" INNER JOIN "hero_powers" ON "powers"."id" = "hero_powers"."power_id" WHERE "hero_powers"."hero_id" = ?[0m  [["hero_id", 2]]
+  ↳ app/views/heros/show.html.erb:5
+  Rendered heros/show.html.erb within layouts/application (Duration: 2.4ms | Allocations: 1026)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 10ms (Views: 7.8ms | ActiveRecord: 0.4ms | Allocations: 5508)
+
+
+Started GET "/heros" for ::1 at 2020-11-02 16:15:14 -0500
+Processing by HerosController#index as HTML
+  Rendering heros/index.html.erb within layouts/application
+  [1m[36mHero Load (0.2ms)[0m  [1m[34mSELECT "heros".* FROM "heros"[0m
+  ↳ app/views/heros/index.html.erb:4
+  Rendered heros/index.html.erb within layouts/application (Duration: 2.3ms | Allocations: 1026)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 10ms (Views: 9.0ms | ActiveRecord: 0.2ms | Allocations: 4983)
+
+
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mHero Load (0.1ms)[0m  [1m[34mSELECT "heros".* FROM "heros"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mHero Destroy (0.4ms)[0m  [1m[31mDELETE FROM "heros" WHERE "heros"."id" = ?[0m  [["id", 1]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mHero Destroy (0.3ms)[0m  [1m[31mDELETE FROM "heros" WHERE "heros"."id" = ?[0m  [["id", 2]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mHero Destroy (0.3ms)[0m  [1m[31mDELETE FROM "heros" WHERE "heros"."id" = ?[0m  [["id", 3]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mHero Destroy (0.3ms)[0m  [1m[31mDELETE FROM "heros" WHERE "heros"."id" = ?[0m  [["id", 4]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mHero Destroy (0.3ms)[0m  [1m[31mDELETE FROM "heros" WHERE "heros"."id" = ?[0m  [["id", 5]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mHero Destroy (0.4ms)[0m  [1m[31mDELETE FROM "heros" WHERE "heros"."id" = ?[0m  [["id", 6]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mHero Destroy (0.3ms)[0m  [1m[31mDELETE FROM "heros" WHERE "heros"."id" = ?[0m  [["id", 7]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mHero Destroy (0.3ms)[0m  [1m[31mDELETE FROM "heros" WHERE "heros"."id" = ?[0m  [["id", 8]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mHero Destroy (0.3ms)[0m  [1m[31mDELETE FROM "heros" WHERE "heros"."id" = ?[0m  [["id", 9]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mHero Destroy (0.3ms)[0m  [1m[31mDELETE FROM "heros" WHERE "heros"."id" = ?[0m  [["id", 10]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mHero Destroy (0.3ms)[0m  [1m[31mDELETE FROM "heros" WHERE "heros"."id" = ?[0m  [["id", 11]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mPower Load (0.3ms)[0m  [1m[34mSELECT "powers".* FROM "powers"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPower Destroy (0.4ms)[0m  [1m[31mDELETE FROM "powers" WHERE "powers"."id" = ?[0m  [["id", 1]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPower Destroy (0.3ms)[0m  [1m[31mDELETE FROM "powers" WHERE "powers"."id" = ?[0m  [["id", 2]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPower Destroy (0.3ms)[0m  [1m[31mDELETE FROM "powers" WHERE "powers"."id" = ?[0m  [["id", 3]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPower Destroy (0.3ms)[0m  [1m[31mDELETE FROM "powers" WHERE "powers"."id" = ?[0m  [["id", 4]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPower Destroy (0.4ms)[0m  [1m[31mDELETE FROM "powers" WHERE "powers"."id" = ?[0m  [["id", 5]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPower Destroy (0.3ms)[0m  [1m[31mDELETE FROM "powers" WHERE "powers"."id" = ?[0m  [["id", 6]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPower Destroy (0.3ms)[0m  [1m[31mDELETE FROM "powers" WHERE "powers"."id" = ?[0m  [["id", 7]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPower Destroy (0.3ms)[0m  [1m[31mDELETE FROM "powers" WHERE "powers"."id" = ?[0m  [["id", 8]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPower Destroy (0.6ms)[0m  [1m[31mDELETE FROM "powers" WHERE "powers"."id" = ?[0m  [["id", 9]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPower Destroy (0.4ms)[0m  [1m[31mDELETE FROM "powers" WHERE "powers"."id" = ?[0m  [["id", 10]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mHeroPower Load (0.2ms)[0m  [1m[34mSELECT "hero_powers".* FROM "hero_powers"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mHeroPower Destroy (0.5ms)[0m  [1m[31mDELETE FROM "hero_powers" WHERE "hero_powers"."id" = ?[0m  [["id", 1]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mHeroPower Destroy (0.3ms)[0m  [1m[31mDELETE FROM "hero_powers" WHERE "hero_powers"."id" = ?[0m  [["id", 2]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mHeroPower Destroy (0.3ms)[0m  [1m[31mDELETE FROM "hero_powers" WHERE "hero_powers"."id" = ?[0m  [["id", 3]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mHeroPower Destroy (0.3ms)[0m  [1m[31mDELETE FROM "hero_powers" WHERE "hero_powers"."id" = ?[0m  [["id", 4]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mHeroPower Destroy (0.3ms)[0m  [1m[31mDELETE FROM "hero_powers" WHERE "hero_powers"."id" = ?[0m  [["id", 5]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mHeroPower Destroy (0.3ms)[0m  [1m[31mDELETE FROM "hero_powers" WHERE "hero_powers"."id" = ?[0m  [["id", 6]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mHeroPower Destroy (0.4ms)[0m  [1m[31mDELETE FROM "hero_powers" WHERE "hero_powers"."id" = ?[0m  [["id", 7]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mHeroPower Destroy (0.4ms)[0m  [1m[31mDELETE FROM "hero_powers" WHERE "hero_powers"."id" = ?[0m  [["id", 8]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mHeroPower Destroy (0.3ms)[0m  [1m[31mDELETE FROM "hero_powers" WHERE "hero_powers"."id" = ?[0m  [["id", 9]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mHeroPower Destroy (0.4ms)[0m  [1m[31mDELETE FROM "hero_powers" WHERE "hero_powers"."id" = ?[0m  [["id", 10]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPower Create (0.5ms)[0m  [1m[32mINSERT INTO "powers" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Absorption"], ["description", "Quality is not an act, it is a habit."], ["created_at", "2020-11-02 21:15:37.781729"], ["updated_at", "2020-11-02 21:15:37.781729"]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPower Create (0.4ms)[0m  [1m[32mINSERT INTO "powers" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Intuitive aptitude"], ["description", "The unexamined life is not worth living."], ["created_at", "2020-11-02 21:15:37.789771"], ["updated_at", "2020-11-02 21:15:37.789771"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPower Create (0.4ms)[0m  [1m[32mINSERT INTO "powers" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Wishing"], ["description", "Control thy passions lest they take vengence on thee."], ["created_at", "2020-11-02 21:15:37.795516"], ["updated_at", "2020-11-02 21:15:37.795516"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPower Create (0.4ms)[0m  [1m[32mINSERT INTO "powers" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Molecular Dissipation"], ["description", "Dignity does not consist in possessing honors, but in deserving them."], ["created_at", "2020-11-02 21:15:37.800783"], ["updated_at", "2020-11-02 21:15:37.800783"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPower Create (0.7ms)[0m  [1m[32mINSERT INTO "powers" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Electrical Transport"], ["description", "Beware the barrenness of a busy life."], ["created_at", "2020-11-02 21:15:37.806375"], ["updated_at", "2020-11-02 21:15:37.806375"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPower Create (0.4ms)[0m  [1m[32mINSERT INTO "powers" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Web Creation"], ["description", "Rhetoric is the art of ruling the minds of men."], ["created_at", "2020-11-02 21:15:37.812480"], ["updated_at", "2020-11-02 21:15:37.812480"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPower Create (0.4ms)[0m  [1m[32mINSERT INTO "powers" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Regeneration"], ["description", "Philosophy is the highest music."], ["created_at", "2020-11-02 21:15:37.818532"], ["updated_at", "2020-11-02 21:15:37.818532"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPower Create (0.4ms)[0m  [1m[32mINSERT INTO "powers" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Qwardian Power Ring"], ["description", "Pleasure in the job puts perfection in the work."], ["created_at", "2020-11-02 21:15:37.824087"], ["updated_at", "2020-11-02 21:15:37.824087"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPower Create (0.4ms)[0m  [1m[32mINSERT INTO "powers" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Intangibility"], ["description", "Beware the barrenness of a busy life."], ["created_at", "2020-11-02 21:15:37.829178"], ["updated_at", "2020-11-02 21:15:37.829178"]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPower Create (0.6ms)[0m  [1m[32mINSERT INTO "powers" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Jump"], ["description", "A few vices are sufficient to darken many virtues."], ["created_at", "2020-11-02 21:15:37.846567"], ["updated_at", "2020-11-02 21:15:37.846567"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mHero Create (0.8ms)[0m  [1m[32mINSERT INTO "heros" ("name", "city", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "General Valkyrie XI"], ["city", "Port Cordell"], ["created_at", "2020-11-02 21:15:37.853258"], ["updated_at", "2020-11-02 21:15:37.853258"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mPower Load (0.2ms)[0m  [1m[34mSELECT "powers".* FROM "powers"[0m
+  [1m[36mPower Load (0.3ms)[0m  [1m[34mSELECT "powers".* FROM "powers" WHERE "powers"."title" = ? LIMIT ?[0m  [["title", "Molecular Dissipation"], ["LIMIT", 1]]
+  ↳ app/models/hero.rb:6:in `add_power'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/hero.rb:7:in `add_power'
+  [1m[36mHero Load (0.2ms)[0m  [1m[34mSELECT "heros".* FROM "heros" WHERE "heros"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/models/hero.rb:7:in `add_power'
+  [1m[36mPower Load (0.2ms)[0m  [1m[34mSELECT "powers".* FROM "powers" WHERE "powers"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/models/hero.rb:7:in `add_power'
+  [1m[36mHeroPower Create (0.4ms)[0m  [1m[32mINSERT INTO "hero_powers" ("hero_id", "power_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["hero_id", 12], ["power_id", 14], ["created_at", "2020-11-02 21:15:37.874378"], ["updated_at", "2020-11-02 21:15:37.874378"]]
+  ↳ app/models/hero.rb:7:in `add_power'
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/hero.rb:7:in `add_power'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mHero Create (0.7ms)[0m  [1m[32mINSERT INTO "heros" ("name", "city", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Cyborg Wildfire"], ["city", "Langoshstad"], ["created_at", "2020-11-02 21:15:37.879594"], ["updated_at", "2020-11-02 21:15:37.879594"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mPower Load (0.3ms)[0m  [1m[34mSELECT "powers".* FROM "powers"[0m
+  [1m[36mPower Load (0.1ms)[0m  [1m[34mSELECT "powers".* FROM "powers" WHERE "powers"."title" = ? LIMIT ?[0m  [["title", "Intuitive aptitude"], ["LIMIT", 1]]
+  ↳ app/models/hero.rb:6:in `add_power'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/hero.rb:7:in `add_power'
+  [1m[36mHero Load (0.1ms)[0m  [1m[34mSELECT "heros".* FROM "heros" WHERE "heros"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/models/hero.rb:7:in `add_power'
+  [1m[36mPower Load (0.1ms)[0m  [1m[34mSELECT "powers".* FROM "powers" WHERE "powers"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/models/hero.rb:7:in `add_power'
+  [1m[36mHeroPower Create (0.4ms)[0m  [1m[32mINSERT INTO "hero_powers" ("hero_id", "power_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["hero_id", 13], ["power_id", 12], ["created_at", "2020-11-02 21:15:37.893700"], ["updated_at", "2020-11-02 21:15:37.893700"]]
+  ↳ app/models/hero.rb:7:in `add_power'
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/hero.rb:7:in `add_power'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mHero Create (0.5ms)[0m  [1m[32mINSERT INTO "heros" ("name", "city", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Guardian"], ["city", "Rodriguezborough"], ["created_at", "2020-11-02 21:15:37.898520"], ["updated_at", "2020-11-02 21:15:37.898520"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mPower Load (0.3ms)[0m  [1m[34mSELECT "powers".* FROM "powers"[0m
+  [1m[36mPower Load (0.1ms)[0m  [1m[34mSELECT "powers".* FROM "powers" WHERE "powers"."title" = ? LIMIT ?[0m  [["title", "Intangibility"], ["LIMIT", 1]]
+  ↳ app/models/hero.rb:6:in `add_power'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/hero.rb:7:in `add_power'
+  [1m[36mHero Load (0.1ms)[0m  [1m[34mSELECT "heros".* FROM "heros" WHERE "heros"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/models/hero.rb:7:in `add_power'
+  [1m[36mPower Load (0.1ms)[0m  [1m[34mSELECT "powers".* FROM "powers" WHERE "powers"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/models/hero.rb:7:in `add_power'
+  [1m[36mHeroPower Create (0.4ms)[0m  [1m[32mINSERT INTO "hero_powers" ("hero_id", "power_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["hero_id", 14], ["power_id", 19], ["created_at", "2020-11-02 21:15:37.913986"], ["updated_at", "2020-11-02 21:15:37.913986"]]
+  ↳ app/models/hero.rb:7:in `add_power'
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/hero.rb:7:in `add_power'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mHero Create (0.5ms)[0m  [1m[32mINSERT INTO "heros" ("name", "city", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Doctor Multiple Knight"], ["city", "Pourosville"], ["created_at", "2020-11-02 21:15:37.918835"], ["updated_at", "2020-11-02 21:15:37.918835"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mPower Load (0.2ms)[0m  [1m[34mSELECT "powers".* FROM "powers"[0m
+  [1m[36mPower Load (0.1ms)[0m  [1m[34mSELECT "powers".* FROM "powers" WHERE "powers"."title" = ? LIMIT ?[0m  [["title", "Intuitive aptitude"], ["LIMIT", 1]]
+  ↳ app/models/hero.rb:6:in `add_power'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/hero.rb:7:in `add_power'
+  [1m[36mHero Load (0.2ms)[0m  [1m[34mSELECT "heros".* FROM "heros" WHERE "heros"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/models/hero.rb:7:in `add_power'
+  [1m[36mPower Load (0.1ms)[0m  [1m[34mSELECT "powers".* FROM "powers" WHERE "powers"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/models/hero.rb:7:in `add_power'
+  [1m[36mHeroPower Create (0.5ms)[0m  [1m[32mINSERT INTO "hero_powers" ("hero_id", "power_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["hero_id", 15], ["power_id", 12], ["created_at", "2020-11-02 21:15:37.935571"], ["updated_at", "2020-11-02 21:15:37.935571"]]
+  ↳ app/models/hero.rb:7:in `add_power'
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/hero.rb:7:in `add_power'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mHero Create (0.5ms)[0m  [1m[32mINSERT INTO "heros" ("name", "city", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Illustrious Magog Brain"], ["city", "Johanneport"], ["created_at", "2020-11-02 21:15:37.941055"], ["updated_at", "2020-11-02 21:15:37.941055"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mPower Load (0.2ms)[0m  [1m[34mSELECT "powers".* FROM "powers"[0m
+  [1m[36mPower Load (0.2ms)[0m  [1m[34mSELECT "powers".* FROM "powers" WHERE "powers"."title" = ? LIMIT ?[0m  [["title", "Qwardian Power Ring"], ["LIMIT", 1]]
+  ↳ app/models/hero.rb:6:in `add_power'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/hero.rb:7:in `add_power'
+  [1m[36mHero Load (0.1ms)[0m  [1m[34mSELECT "heros".* FROM "heros" WHERE "heros"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/models/hero.rb:7:in `add_power'
+  [1m[36mPower Load (0.1ms)[0m  [1m[34mSELECT "powers".* FROM "powers" WHERE "powers"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/models/hero.rb:7:in `add_power'
+  [1m[36mHeroPower Create (0.4ms)[0m  [1m[32mINSERT INTO "hero_powers" ("hero_id", "power_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["hero_id", 16], ["power_id", 18], ["created_at", "2020-11-02 21:15:37.957779"], ["updated_at", "2020-11-02 21:15:37.957779"]]
+  ↳ app/models/hero.rb:7:in `add_power'
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/hero.rb:7:in `add_power'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mHero Create (0.5ms)[0m  [1m[32mINSERT INTO "heros" ("name", "city", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Watcher"], ["city", "West Vaughn"], ["created_at", "2020-11-02 21:15:37.962815"], ["updated_at", "2020-11-02 21:15:37.962815"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mPower Load (0.2ms)[0m  [1m[34mSELECT "powers".* FROM "powers"[0m
+  [1m[36mPower Load (0.2ms)[0m  [1m[34mSELECT "powers".* FROM "powers" WHERE "powers"."title" = ? LIMIT ?[0m  [["title", "Qwardian Power Ring"], ["LIMIT", 1]]
+  ↳ app/models/hero.rb:6:in `add_power'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/hero.rb:7:in `add_power'
+  [1m[36mHero Load (0.1ms)[0m  [1m[34mSELECT "heros".* FROM "heros" WHERE "heros"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/models/hero.rb:7:in `add_power'
+  [1m[36mPower Load (0.1ms)[0m  [1m[34mSELECT "powers".* FROM "powers" WHERE "powers"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/models/hero.rb:7:in `add_power'
+  [1m[36mHeroPower Create (0.4ms)[0m  [1m[32mINSERT INTO "hero_powers" ("hero_id", "power_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["hero_id", 17], ["power_id", 18], ["created_at", "2020-11-02 21:15:37.978063"], ["updated_at", "2020-11-02 21:15:37.978063"]]
+  ↳ app/models/hero.rb:7:in `add_power'
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/hero.rb:7:in `add_power'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mHero Create (0.5ms)[0m  [1m[32mINSERT INTO "heros" ("name", "city", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Elongated Man Strike"], ["city", "East Zacheryville"], ["created_at", "2020-11-02 21:15:37.984663"], ["updated_at", "2020-11-02 21:15:37.984663"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mPower Load (0.2ms)[0m  [1m[34mSELECT "powers".* FROM "powers"[0m
+  [1m[36mPower Load (0.1ms)[0m  [1m[34mSELECT "powers".* FROM "powers" WHERE "powers"."title" = ? LIMIT ?[0m  [["title", "Wishing"], ["LIMIT", 1]]
+  ↳ app/models/hero.rb:6:in `add_power'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/hero.rb:7:in `add_power'
+  [1m[36mHero Load (0.1ms)[0m  [1m[34mSELECT "heros".* FROM "heros" WHERE "heros"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/models/hero.rb:7:in `add_power'
+  [1m[36mPower Load (0.1ms)[0m  [1m[34mSELECT "powers".* FROM "powers" WHERE "powers"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/models/hero.rb:7:in `add_power'
+  [1m[36mHeroPower Create (0.6ms)[0m  [1m[32mINSERT INTO "hero_powers" ("hero_id", "power_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["hero_id", 18], ["power_id", 13], ["created_at", "2020-11-02 21:15:38.001021"], ["updated_at", "2020-11-02 21:15:38.001021"]]
+  ↳ app/models/hero.rb:7:in `add_power'
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/hero.rb:7:in `add_power'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mHero Create (0.7ms)[0m  [1m[32mINSERT INTO "heros" ("name", "city", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Bane"], ["city", "Port Kasey"], ["created_at", "2020-11-02 21:15:38.007097"], ["updated_at", "2020-11-02 21:15:38.007097"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mPower Load (0.2ms)[0m  [1m[34mSELECT "powers".* FROM "powers"[0m
+  [1m[36mPower Load (0.1ms)[0m  [1m[34mSELECT "powers".* FROM "powers" WHERE "powers"."title" = ? LIMIT ?[0m  [["title", "Jump"], ["LIMIT", 1]]
+  ↳ app/models/hero.rb:6:in `add_power'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/hero.rb:7:in `add_power'
+  [1m[36mHero Load (0.2ms)[0m  [1m[34mSELECT "heros".* FROM "heros" WHERE "heros"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/models/hero.rb:7:in `add_power'
+  [1m[36mPower Load (0.1ms)[0m  [1m[34mSELECT "powers".* FROM "powers" WHERE "powers"."id" = ? LIMIT ?[0m  [["id", 20], ["LIMIT", 1]]
+  ↳ app/models/hero.rb:7:in `add_power'
+  [1m[36mHeroPower Create (0.5ms)[0m  [1m[32mINSERT INTO "hero_powers" ("hero_id", "power_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["hero_id", 19], ["power_id", 20], ["created_at", "2020-11-02 21:15:38.024077"], ["updated_at", "2020-11-02 21:15:38.024077"]]
+  ↳ app/models/hero.rb:7:in `add_power'
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/hero.rb:7:in `add_power'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mHero Create (0.6ms)[0m  [1m[32mINSERT INTO "heros" ("name", "city", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Shang-Chi the Fated"], ["city", "Grimestown"], ["created_at", "2020-11-02 21:15:38.029306"], ["updated_at", "2020-11-02 21:15:38.029306"]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mPower Load (0.2ms)[0m  [1m[34mSELECT "powers".* FROM "powers"[0m
+  [1m[36mPower Load (0.1ms)[0m  [1m[34mSELECT "powers".* FROM "powers" WHERE "powers"."title" = ? LIMIT ?[0m  [["title", "Intuitive aptitude"], ["LIMIT", 1]]
+  ↳ app/models/hero.rb:6:in `add_power'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/hero.rb:7:in `add_power'
+  [1m[36mHero Load (0.1ms)[0m  [1m[34mSELECT "heros".* FROM "heros" WHERE "heros"."id" = ? LIMIT ?[0m  [["id", 20], ["LIMIT", 1]]
+  ↳ app/models/hero.rb:7:in `add_power'
+  [1m[36mPower Load (0.1ms)[0m  [1m[34mSELECT "powers".* FROM "powers" WHERE "powers"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/models/hero.rb:7:in `add_power'
+  [1m[36mHeroPower Create (0.4ms)[0m  [1m[32mINSERT INTO "hero_powers" ("hero_id", "power_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["hero_id", 20], ["power_id", 12], ["created_at", "2020-11-02 21:15:38.042882"], ["updated_at", "2020-11-02 21:15:38.042882"]]
+  ↳ app/models/hero.rb:7:in `add_power'
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/hero.rb:7:in `add_power'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mHero Create (0.5ms)[0m  [1m[32mINSERT INTO "heros" ("name", "city", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Hancock"], ["city", "Veumshire"], ["created_at", "2020-11-02 21:15:38.048140"], ["updated_at", "2020-11-02 21:15:38.048140"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mPower Load (0.2ms)[0m  [1m[34mSELECT "powers".* FROM "powers"[0m
+  [1m[36mPower Load (0.1ms)[0m  [1m[34mSELECT "powers".* FROM "powers" WHERE "powers"."title" = ? LIMIT ?[0m  [["title", "Jump"], ["LIMIT", 1]]
+  ↳ app/models/hero.rb:6:in `add_power'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/hero.rb:7:in `add_power'
+  [1m[36mHero Load (0.1ms)[0m  [1m[34mSELECT "heros".* FROM "heros" WHERE "heros"."id" = ? LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/models/hero.rb:7:in `add_power'
+  [1m[36mPower Load (0.1ms)[0m  [1m[34mSELECT "powers".* FROM "powers" WHERE "powers"."id" = ? LIMIT ?[0m  [["id", 20], ["LIMIT", 1]]
+  ↳ app/models/hero.rb:7:in `add_power'
+  [1m[36mHeroPower Create (0.4ms)[0m  [1m[32mINSERT INTO "hero_powers" ("hero_id", "power_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["hero_id", 21], ["power_id", 20], ["created_at", "2020-11-02 21:15:38.063593"], ["updated_at", "2020-11-02 21:15:38.063593"]]
+  ↳ app/models/hero.rb:7:in `add_power'
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/hero.rb:7:in `add_power'
+Started GET "/heros" for ::1 at 2020-11-02 16:15:42 -0500
+Processing by HerosController#index as HTML
+  Rendering heros/index.html.erb within layouts/application
+  [1m[36mHero Load (0.2ms)[0m  [1m[34mSELECT "heros".* FROM "heros"[0m
+  ↳ app/views/heros/index.html.erb:4
+  Rendered heros/index.html.erb within layouts/application (Duration: 2.2ms | Allocations: 988)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 10ms (Views: 9.0ms | ActiveRecord: 0.2ms | Allocations: 4938)
+
+
+Started GET "/heros/21" for ::1 at 2020-11-02 16:15:44 -0500
+Processing by HerosController#show as HTML
+  Parameters: {"id"=>"21"}
+  [1m[36mHero Load (0.1ms)[0m  [1m[34mSELECT "heros".* FROM "heros" WHERE "heros"."id" = ? LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/controllers/heros_controller.rb:36:in `set_super_hero'
+  Rendering heros/show.html.erb within layouts/application
+  [1m[36mPower Load (0.1ms)[0m  [1m[34mSELECT "powers".* FROM "powers" INNER JOIN "hero_powers" ON "powers"."id" = "hero_powers"."power_id" WHERE "hero_powers"."hero_id" = ?[0m  [["hero_id", 21]]
+  ↳ app/views/heros/show.html.erb:5
+  Rendered heros/show.html.erb within layouts/application (Duration: 2.0ms | Allocations: 1026)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 12ms (Views: 10.3ms | ActiveRecord: 0.3ms | Allocations: 5515)
+
+
+Started GET "/heros/21/edit" for ::1 at 2020-11-02 16:15:45 -0500
+Processing by HerosController#edit as HTML
+  Parameters: {"id"=>"21"}
+  [1m[36mHero Load (0.1ms)[0m  [1m[34mSELECT "heros".* FROM "heros" WHERE "heros"."id" = ? LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/controllers/heros_controller.rb:36:in `set_super_hero'
+  Rendering heros/edit.html.erb within layouts/application
+  Rendered heros/_form.html.erb (Duration: 1.1ms | Allocations: 627)
+  Rendered heros/edit.html.erb within layouts/application (Duration: 1.4ms | Allocations: 691)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 9ms (Views: 7.1ms | ActiveRecord: 0.1ms | Allocations: 5176)
+
+
+Started PATCH "/heros/21" for ::1 at 2020-11-02 16:16:01 -0500
+Processing by HerosController#update as HTML
+  Parameters: {"authenticity_token"=>"HSwo4ePZtbTKT9FRmLLlERRpL2yiAZYeX7FjgLEzARad4EpHhzaSr/qfHlYjgpnI+9GruUjdyQtrMbGmiWfvXA==", "hero"=>{"name"=>"Eddie Murphy", "city"=>"Veumshire"}, "commit"=>"Add Hero", "id"=>"21"}
+  [1m[36mHero Load (0.3ms)[0m  [1m[34mSELECT "heros".* FROM "heros" WHERE "heros"."id" = ? LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/controllers/heros_controller.rb:36:in `set_super_hero'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/heros_controller.rb:25:in `update'
+  [1m[36mHero Update (0.3ms)[0m  [1m[33mUPDATE "heros" SET "name" = ?, "updated_at" = ? WHERE "heros"."id" = ?[0m  [["name", "Eddie Murphy"], ["updated_at", "2020-11-02 21:16:01.489427"], ["id", 21]]
+  ↳ app/controllers/heros_controller.rb:25:in `update'
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/heros_controller.rb:25:in `update'
+Redirected to http://localhost:3000/heros/21
+Completed 302 Found in 7ms (ActiveRecord: 1.6ms | Allocations: 3325)
+
+
+Started GET "/heros/21" for ::1 at 2020-11-02 16:16:01 -0500
+Processing by HerosController#show as HTML
+  Parameters: {"id"=>"21"}
+  [1m[36mHero Load (0.2ms)[0m  [1m[34mSELECT "heros".* FROM "heros" WHERE "heros"."id" = ? LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/controllers/heros_controller.rb:36:in `set_super_hero'
+  Rendering heros/show.html.erb within layouts/application
+  [1m[36mPower Load (0.2ms)[0m  [1m[34mSELECT "powers".* FROM "powers" INNER JOIN "hero_powers" ON "powers"."id" = "hero_powers"."power_id" WHERE "hero_powers"."hero_id" = ?[0m  [["hero_id", 21]]
+  ↳ app/views/heros/show.html.erb:5
+  Rendered heros/show.html.erb within layouts/application (Duration: 1.8ms | Allocations: 1026)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 8ms (Views: 6.1ms | ActiveRecord: 0.4ms | Allocations: 5516)
+
+
+Started GET "/heros" for ::1 at 2020-11-02 16:16:03 -0500
+Processing by HerosController#index as HTML
+  Rendering heros/index.html.erb within layouts/application
+  [1m[36mHero Load (0.2ms)[0m  [1m[34mSELECT "heros".* FROM "heros"[0m
+  ↳ app/views/heros/index.html.erb:4
+  Rendered heros/index.html.erb within layouts/application (Duration: 1.5ms | Allocations: 988)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 8ms (Views: 7.3ms | ActiveRecord: 0.2ms | Allocations: 4938)
+
+
+Started GET "/heros/17" for ::1 at 2020-11-02 16:16:07 -0500
+Processing by HerosController#show as HTML
+  Parameters: {"id"=>"17"}
+  [1m[36mHero Load (0.2ms)[0m  [1m[34mSELECT "heros".* FROM "heros" WHERE "heros"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/heros_controller.rb:36:in `set_super_hero'
+  Rendering heros/show.html.erb within layouts/application
+  [1m[36mPower Load (0.2ms)[0m  [1m[34mSELECT "powers".* FROM "powers" INNER JOIN "hero_powers" ON "powers"."id" = "hero_powers"."power_id" WHERE "hero_powers"."hero_id" = ?[0m  [["hero_id", 17]]
+  ↳ app/views/heros/show.html.erb:5
+  Rendered heros/show.html.erb within layouts/application (Duration: 2.2ms | Allocations: 1026)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 20ms (Views: 18.0ms | ActiveRecord: 0.4ms | Allocations: 5523)
+
+
+Started GET "/heros/17/edit" for ::1 at 2020-11-02 16:16:09 -0500
+Processing by HerosController#edit as HTML
+  Parameters: {"id"=>"17"}
+  [1m[36mHero Load (0.2ms)[0m  [1m[34mSELECT "heros".* FROM "heros" WHERE "heros"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/heros_controller.rb:36:in `set_super_hero'
+  Rendering heros/edit.html.erb within layouts/application
+  Rendered heros/_form.html.erb (Duration: 1.5ms | Allocations: 627)
+  Rendered heros/edit.html.erb within layouts/application (Duration: 1.9ms | Allocations: 691)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 11ms (Views: 7.7ms | ActiveRecord: 0.2ms | Allocations: 5176)
+
+
+Started PATCH "/heros/17" for ::1 at 2020-11-02 16:16:16 -0500
+Processing by HerosController#update as HTML
+  Parameters: {"authenticity_token"=>"BnVwhLCc+pQmYpW0WRGOq0zykqaWGC+KAFU6kfrg2x42iEYPVWYacUP3ro6h6GmA1eMDMUMsTz3BqHoSCnQo1Q==", "hero"=>{"name"=>"Watcher", "city"=>"NYC"}, "commit"=>"Add Hero", "id"=>"17"}
+  [1m[36mHero Load (0.3ms)[0m  [1m[34mSELECT "heros".* FROM "heros" WHERE "heros"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/heros_controller.rb:36:in `set_super_hero'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/heros_controller.rb:25:in `update'
+  [1m[36mHero Update (0.3ms)[0m  [1m[33mUPDATE "heros" SET "city" = ?, "updated_at" = ? WHERE "heros"."id" = ?[0m  [["city", "NYC"], ["updated_at", "2020-11-02 21:16:16.676035"], ["id", 17]]
+  ↳ app/controllers/heros_controller.rb:25:in `update'
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/heros_controller.rb:25:in `update'
+Redirected to http://localhost:3000/heros/17
+Completed 302 Found in 7ms (ActiveRecord: 1.4ms | Allocations: 3322)
+
+
+Started GET "/heros/17" for ::1 at 2020-11-02 16:16:16 -0500
+Processing by HerosController#show as HTML
+  Parameters: {"id"=>"17"}
+  [1m[36mHero Load (0.1ms)[0m  [1m[34mSELECT "heros".* FROM "heros" WHERE "heros"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/heros_controller.rb:36:in `set_super_hero'
+  Rendering heros/show.html.erb within layouts/application
+  [1m[36mPower Load (0.1ms)[0m  [1m[34mSELECT "powers".* FROM "powers" INNER JOIN "hero_powers" ON "powers"."id" = "hero_powers"."power_id" WHERE "hero_powers"."hero_id" = ?[0m  [["hero_id", 17]]
+  ↳ app/views/heros/show.html.erb:5
+  Rendered heros/show.html.erb within layouts/application (Duration: 1.7ms | Allocations: 1026)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 8ms (Views: 5.9ms | ActiveRecord: 0.3ms | Allocations: 5514)
+
+
+Started GET "/heros" for ::1 at 2020-11-02 16:16:18 -0500
+Processing by HerosController#index as HTML
+  Rendering heros/index.html.erb within layouts/application
+  [1m[36mHero Load (0.2ms)[0m  [1m[34mSELECT "heros".* FROM "heros"[0m
+  ↳ app/views/heros/index.html.erb:4
+  Rendered heros/index.html.erb within layouts/application (Duration: 2.4ms | Allocations: 988)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 10ms (Views: 8.4ms | ActiveRecord: 0.2ms | Allocations: 4940)
+
+
+Started GET "/heros/12" for ::1 at 2020-11-02 16:17:09 -0500
+Processing by HerosController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mHero Load (0.1ms)[0m  [1m[34mSELECT "heros".* FROM "heros" WHERE "heros"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/heros_controller.rb:36:in `set_super_hero'
+  Rendering heros/show.html.erb within layouts/application
+  [1m[36mPower Load (0.2ms)[0m  [1m[34mSELECT "powers".* FROM "powers" INNER JOIN "hero_powers" ON "powers"."id" = "hero_powers"."power_id" WHERE "hero_powers"."hero_id" = ?[0m  [["hero_id", 12]]
+  ↳ app/views/heros/show.html.erb:5
+  Rendered heros/show.html.erb within layouts/application (Duration: 2.8ms | Allocations: 1240)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 13ms (Views: 10.7ms | ActiveRecord: 0.3ms | Allocations: 6653)
+
+
+Started GET "/heros/12/edit" for ::1 at 2020-11-02 16:17:11 -0500
+Processing by HerosController#edit as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mHero Load (0.2ms)[0m  [1m[34mSELECT "heros".* FROM "heros" WHERE "heros"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/heros_controller.rb:36:in `set_super_hero'
+  Rendering heros/edit.html.erb within layouts/application
+  Rendered heros/_form.html.erb (Duration: 2.2ms | Allocations: 824)
+  Rendered heros/edit.html.erb within layouts/application (Duration: 3.4ms | Allocations: 1119)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 11ms (Views: 8.5ms | ActiveRecord: 0.2ms | Allocations: 5749)
+
+
+Started GET "/heros/13" for ::1 at 2020-11-02 16:17:20 -0500
+Processing by HerosController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mHero Load (0.2ms)[0m  [1m[34mSELECT "heros".* FROM "heros" WHERE "heros"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/heros_controller.rb:36:in `set_super_hero'
+  Rendering heros/show.html.erb within layouts/application
+  [1m[36mPower Load (0.3ms)[0m  [1m[34mSELECT "powers".* FROM "powers" INNER JOIN "hero_powers" ON "powers"."id" = "hero_powers"."power_id" WHERE "hero_powers"."hero_id" = ?[0m  [["hero_id", 13]]
+  ↳ app/views/heros/show.html.erb:5
+  Rendered heros/show.html.erb within layouts/application (Duration: 3.6ms | Allocations: 1029)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 14ms (Views: 11.5ms | ActiveRecord: 0.5ms | Allocations: 5518)
+
+
+Started GET "/powers/12" for ::1 at 2020-11-02 16:17:21 -0500
+Processing by PowersController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mPower Load (0.4ms)[0m  [1m[34mSELECT "powers".* FROM "powers" WHERE "powers"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/powers_controller.rb:29:in `set_power'
+  Rendering powers/show.html.erb within layouts/application
+  [1m[36mHero Load (0.3ms)[0m  [1m[34mSELECT "heros".* FROM "heros" INNER JOIN "hero_powers" ON "heros"."id" = "hero_powers"."hero_id" WHERE "hero_powers"."power_id" = ?[0m  [["power_id", 12]]
+  ↳ app/views/powers/show.html.erb:5
+  Rendered powers/show.html.erb within layouts/application (Duration: 6.1ms | Allocations: 2589)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 19ms (Views: 15.1ms | ActiveRecord: 0.7ms | Allocations: 7725)
+
+
+Started GET "/powers" for ::1 at 2020-11-02 16:17:23 -0500
+Processing by PowersController#index as HTML
+  Rendering powers/index.html.erb within layouts/application
+  [1m[36mPower Load (0.3ms)[0m  [1m[34mSELECT "powers".* FROM "powers"[0m
+  ↳ app/views/powers/index.html.erb:4
+  Rendered powers/index.html.erb within layouts/application (Duration: 2.2ms | Allocations: 1148)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 11ms (Views: 10.0ms | ActiveRecord: 0.3ms | Allocations: 5243)
+
+
+Started GET "/powers" for ::1 at 2020-11-02 16:18:02 -0500
+Processing by PowersController#index as HTML
+  Rendering powers/index.html.erb within layouts/application
+  [1m[36mPower Load (0.1ms)[0m  [1m[34mSELECT "powers".* FROM "powers"[0m
+  ↳ app/views/powers/index.html.erb:4
+  Rendered powers/index.html.erb within layouts/application (Duration: 435.5ms | Allocations: 153147)
+Completed 500 Internal Server Error in 439ms (ActiveRecord: 0.1ms | Allocations: 154310)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `new_powers_path' for #<#<Class:0x00007ff09f9044c0>:0x00007ff09f90ead8>
+Did you mean?  new_power_path
+               new_hero_path):
+    6: <% end %>
+    7: </ul>
+    8: 
+    9: <h3> <%= link_to "Add Power", new_powers_path %>
+  
+app/views/powers/index.html.erb:9
+Started GET "/rails/routes" for ::1 at 2020-11-02 16:18:15 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/rails/routes"):
+  
+actionpack (6.0.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.4) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.4) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.4) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/powers" for ::1 at 2020-11-02 16:18:29 -0500
+Processing by PowersController#index as HTML
+  Rendering powers/index.html.erb within layouts/application
+  [1m[36mPower Load (0.1ms)[0m  [1m[34mSELECT "powers".* FROM "powers"[0m
+  ↳ app/views/powers/index.html.erb:4
+  Rendered powers/index.html.erb within layouts/application (Duration: 2.5ms | Allocations: 1165)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 11ms (Views: 9.6ms | ActiveRecord: 0.1ms | Allocations: 6049)
+
+
+Started GET "/powers/new" for ::1 at 2020-11-02 16:18:32 -0500
+Processing by PowersController#new as HTML
+  Rendering powers/new.html.erb within layouts/application
+  Rendered powers/_form.html.erb (Duration: 4.2ms | Allocations: 983)
+  Rendered powers/new.html.erb within layouts/application (Duration: 6.1ms | Allocations: 1280)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 14ms (Views: 12.8ms | ActiveRecord: 0.0ms | Allocations: 5372)
+
+
+Started POST "/powers" for ::1 at 2020-11-02 16:18:44 -0500
+Processing by PowersController#create as HTML
+  Parameters: {"authenticity_token"=>"/lfzCPNwOnJniCGlhvUa8CK4D8ZP5pVNIoEyESN/8SG2EtvfSS8HW8R6Dwa1whw8guFOo1JOMjPw0IWEE/rzNQ==", "power"=>{"title"=>"Code", "description"=>"I can do it!"}, "commit"=>"Add power"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/powers_controller.rb:18:in `create'
+  [1m[36mPower Create (0.5ms)[0m  [1m[32mINSERT INTO "powers" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Code"], ["description", "I can do it!"], ["created_at", "2020-11-02 21:18:44.102496"], ["updated_at", "2020-11-02 21:18:44.102496"]]
+  ↳ app/controllers/powers_controller.rb:18:in `create'
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/powers_controller.rb:18:in `create'
+Redirected to http://localhost:3000/powers/21
+Completed 302 Found in 6ms (ActiveRecord: 1.4ms | Allocations: 2799)
+
+
+Started GET "/powers/21" for ::1 at 2020-11-02 16:18:44 -0500
+Processing by PowersController#show as HTML
+  Parameters: {"id"=>"21"}
+  [1m[36mPower Load (0.1ms)[0m  [1m[34mSELECT "powers".* FROM "powers" WHERE "powers"."id" = ? LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/controllers/powers_controller.rb:29:in `set_power'
+  Rendering powers/show.html.erb within layouts/application
+  [1m[36mHero Load (0.2ms)[0m  [1m[34mSELECT "heros".* FROM "heros" INNER JOIN "hero_powers" ON "heros"."id" = "hero_powers"."hero_id" WHERE "hero_powers"."power_id" = ?[0m  [["power_id", 21]]
+  ↳ app/views/powers/show.html.erb:5
+  Rendered powers/show.html.erb within layouts/application (Duration: 3.6ms | Allocations: 1154)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 10ms (Views: 8.4ms | ActiveRecord: 0.3ms | Allocations: 5786)
+
+
+Started GET "/powers" for ::1 at 2020-11-02 16:18:47 -0500
+Processing by PowersController#index as HTML
+  Rendering powers/index.html.erb within layouts/application
+  [1m[36mPower Load (0.2ms)[0m  [1m[34mSELECT "powers".* FROM "powers"[0m
+  ↳ app/views/powers/index.html.erb:4
+  Rendered powers/index.html.erb within layouts/application (Duration: 2.6ms | Allocations: 1050)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 12ms (Views: 10.9ms | ActiveRecord: 0.2ms | Allocations: 5006)
+
+
+Started GET "/powers/15" for ::1 at 2020-11-02 16:20:43 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by PowersController#show as HTML
+  Parameters: {"id"=>"15"}
+  [1m[36mPower Load (0.1ms)[0m  [1m[34mSELECT "powers".* FROM "powers" WHERE "powers"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/powers_controller.rb:38:in `set_power'
+  Rendering powers/show.html.erb within layouts/application
+  [1m[36mHero Load (0.2ms)[0m  [1m[34mSELECT "heros".* FROM "heros" INNER JOIN "hero_powers" ON "heros"."id" = "hero_powers"."hero_id" WHERE "hero_powers"."power_id" = ?[0m  [["power_id", 15]]
+  ↳ app/views/powers/show.html.erb:5
+  Rendered powers/show.html.erb within layouts/application (Duration: 8.9ms | Allocations: 5870)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 27ms (Views: 16.0ms | ActiveRecord: 1.7ms | Allocations: 16186)
+
+
+Started GET "/powers/15" for ::1 at 2020-11-02 16:21:33 -0500
+Processing by PowersController#show as HTML
+  Parameters: {"id"=>"15"}
+  [1m[36mPower Load (0.3ms)[0m  [1m[34mSELECT "powers".* FROM "powers" WHERE "powers"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/powers_controller.rb:38:in `set_power'
+  Rendering powers/show.html.erb within layouts/application
+  [1m[36mHero Load (0.1ms)[0m  [1m[34mSELECT "heros".* FROM "heros" INNER JOIN "hero_powers" ON "heros"."id" = "hero_powers"."hero_id" WHERE "hero_powers"."power_id" = ?[0m  [["power_id", 15]]
+  ↳ app/views/powers/show.html.erb:5
+  Rendered powers/show.html.erb within layouts/application (Duration: 1.9ms | Allocations: 1199)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 12ms (Views: 8.4ms | ActiveRecord: 0.5ms | Allocations: 6611)
+
+
+Started GET "/powers/15/edit" for ::1 at 2020-11-02 16:21:34 -0500
+Processing by PowersController#edit as HTML
+  Parameters: {"id"=>"15"}
+  [1m[36mPower Load (0.2ms)[0m  [1m[34mSELECT "powers".* FROM "powers" WHERE "powers"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/powers_controller.rb:38:in `set_power'
+  Rendering powers/edit.html.erb within layouts/application
+  Rendered powers/_form.html.erb (Duration: 3.0ms | Allocations: 879)
+  Rendered powers/edit.html.erb within layouts/application (Duration: 5.2ms | Allocations: 1177)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 15ms (Views: 10.7ms | ActiveRecord: 0.2ms | Allocations: 5806)
+
+
+Started PATCH "/powers/15" for ::1 at 2020-11-02 16:21:46 -0500
+Processing by PowersController#update as HTML
+  Parameters: {"authenticity_token"=>"ulwJ76A6LNPRYjXMJbQwwP1oCq7blkbYlFNaEjQqkkSKadzyxGxJJ7OZp3ySImIANbF1rzMehKKEskll7D6GUg==", "power"=>{"title"=>"ZapZap", "description"=>"Beware the barrenness of a busy life."}, "commit"=>"Add power", "id"=>"15"}
+  [1m[36mPower Load (0.3ms)[0m  [1m[34mSELECT "powers".* FROM "powers" WHERE "powers"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/powers_controller.rb:38:in `set_power'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/powers_controller.rb:27:in `update'
+  [1m[36mPower Update (0.3ms)[0m  [1m[33mUPDATE "powers" SET "title" = ?, "updated_at" = ? WHERE "powers"."id" = ?[0m  [["title", "ZapZap"], ["updated_at", "2020-11-02 21:21:46.021902"], ["id", 15]]
+  ↳ app/controllers/powers_controller.rb:27:in `update'
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/powers_controller.rb:27:in `update'
+Redirected to http://localhost:3000/powers/15
+Completed 302 Found in 6ms (ActiveRecord: 1.4ms | Allocations: 3429)
+
+
+Started GET "/powers/15" for ::1 at 2020-11-02 16:21:46 -0500
+Processing by PowersController#show as HTML
+  Parameters: {"id"=>"15"}
+  [1m[36mPower Load (0.2ms)[0m  [1m[34mSELECT "powers".* FROM "powers" WHERE "powers"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/powers_controller.rb:38:in `set_power'
+  Rendering powers/show.html.erb within layouts/application
+  [1m[36mHero Load (0.1ms)[0m  [1m[34mSELECT "heros".* FROM "heros" INNER JOIN "hero_powers" ON "heros"."id" = "hero_powers"."hero_id" WHERE "hero_powers"."power_id" = ?[0m  [["power_id", 15]]
+  ↳ app/views/powers/show.html.erb:5
+  Rendered powers/show.html.erb within layouts/application (Duration: 1.7ms | Allocations: 991)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 8ms (Views: 5.7ms | ActiveRecord: 0.3ms | Allocations: 5480)
+
+
+Started GET "/powers" for ::1 at 2020-11-02 16:21:48 -0500
+Processing by PowersController#index as HTML
+  Rendering powers/index.html.erb within layouts/application
+  [1m[36mPower Load (0.3ms)[0m  [1m[34mSELECT "powers".* FROM "powers"[0m
+  ↳ app/views/powers/index.html.erb:4
+  Rendered powers/index.html.erb within layouts/application (Duration: 3.4ms | Allocations: 1220)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 12ms (Views: 10.0ms | ActiveRecord: 0.3ms | Allocations: 5314)
+
+
+Started GET "/powers/13" for ::1 at 2020-11-02 16:25:15 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by PowersController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mPower Load (0.1ms)[0m  [1m[34mSELECT "powers".* FROM "powers" WHERE "powers"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/powers_controller.rb:43:in `set_power'
+  Rendering powers/show.html.erb within layouts/application
+  [1m[36mHero Load (0.2ms)[0m  [1m[34mSELECT "heros".* FROM "heros" INNER JOIN "hero_powers" ON "heros"."id" = "hero_powers"."hero_id" WHERE "hero_powers"."power_id" = ?[0m  [["power_id", 13]]
+  ↳ app/views/powers/show.html.erb:5
+  Rendered powers/show.html.erb within layouts/application (Duration: 177.1ms | Allocations: 85060)
+Completed 500 Internal Server Error in 188ms (ActiveRecord: 1.6ms | Allocations: 91753)
+
+
+  
+ActionView::Template::Error (undefined method `delete_power_path' for #<#<Class:0x00007ff0a003d9d0>:0x00007ff0a0047908>):
+     8: </ul>
+     9: <h3><%= link_to "All powers", powers_path%></h3>
+    10: <h3> <%= link_to "Edit Power", edit_power_path(@power.id)%></h3>
+    11: <h3><%= link_to "Delete Power", delete_power_path(@power.id)%></h3>
+  
+app/views/powers/show.html.erb:11
+Started GET "/rails/routes" for ::1 at 2020-11-02 16:25:27 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/rails/routes"):
+  
+actionpack (6.0.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.4) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.4) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.4) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/powers" for ::1 at 2020-11-02 16:27:23 -0500
+Processing by PowersController#index as HTML
+  Rendering powers/index.html.erb within layouts/application
+  [1m[36mPower Load (0.2ms)[0m  [1m[34mSELECT "powers".* FROM "powers"[0m
+  ↳ app/views/powers/index.html.erb:4
+  Rendered powers/index.html.erb within layouts/application (Duration: 2.5ms | Allocations: 1220)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 10ms (Views: 8.7ms | ActiveRecord: 0.2ms | Allocations: 6107)
+
+
+Started GET "/powers/16" for ::1 at 2020-11-02 16:27:26 -0500
+Processing by PowersController#show as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mPower Load (0.2ms)[0m  [1m[34mSELECT "powers".* FROM "powers" WHERE "powers"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/powers_controller.rb:43:in `set_power'
+  Rendering powers/show.html.erb within layouts/application
+  [1m[36mHero Load (0.1ms)[0m  [1m[34mSELECT "heros".* FROM "heros" INNER JOIN "hero_powers" ON "heros"."id" = "hero_powers"."hero_id" WHERE "hero_powers"."power_id" = ?[0m  [["power_id", 16]]
+  ↳ app/views/powers/show.html.erb:5
+  Rendered powers/show.html.erb within layouts/application (Duration: 2.7ms | Allocations: 1257)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 13ms (Views: 10.2ms | ActiveRecord: 0.3ms | Allocations: 5885)
+
+
+Started DELETE "/powers/16" for ::1 at 2020-11-02 16:27:28 -0500
+Processing by PowersController#destroy as HTML
+  Parameters: {"authenticity_token"=>"7laUfKRQEguCxSV3t8w+TA6LxXrak5moM75UyZpB1/L0ND30pmSunR1XJBxWOtlZSjINU0YQSlCP12LPCp5PvQ==", "id"=>"16"}
+  [1m[36mPower Load (0.2ms)[0m  [1m[34mSELECT "powers".* FROM "powers" WHERE "powers"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/powers_controller.rb:43:in `set_power'
+  [1m[36mPower Destroy (1.3ms)[0m  [1m[31mDELETE FROM "powers" WHERE "powers"."id" = ?[0m  [["id", 16]]
+  ↳ app/controllers/powers_controller.rb:32:in `destroy'
+Redirected to http://localhost:3000/powers
+Completed 302 Found in 4ms (ActiveRecord: 1.4ms | Allocations: 1306)
+
+
+Started GET "/powers" for ::1 at 2020-11-02 16:27:28 -0500
+Processing by PowersController#index as HTML
+  Rendering powers/index.html.erb within layouts/application
+  [1m[36mPower Load (0.1ms)[0m  [1m[34mSELECT "powers".* FROM "powers"[0m
+  ↳ app/views/powers/index.html.erb:4
+  Rendered powers/index.html.erb within layouts/application (Duration: 1.4ms | Allocations: 1011)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 8ms (Views: 7.7ms | ActiveRecord: 0.1ms | Allocations: 4966)
+
+
+Started GET "/powers/new" for ::1 at 2020-11-02 16:27:30 -0500
+Processing by PowersController#new as HTML
+  Rendering powers/new.html.erb within layouts/application
+  Rendered powers/_form.html.erb (Duration: 1.5ms | Allocations: 837)
+  Rendered powers/new.html.erb within layouts/application (Duration: 2.9ms | Allocations: 1131)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 11ms (Views: 9.6ms | ActiveRecord: 0.0ms | Allocations: 5227)
+
+
+Started POST "/powers" for ::1 at 2020-11-02 16:27:42 -0500
+Processing by PowersController#create as HTML
+  Parameters: {"authenticity_token"=>"kEE/RNycevNz4HCC+0LC38xUoms/3ool5lPND+MHLvvYBBeTZsNH2tASXiHIdcQTbA3jDiJ2LVs0Anqa04Is7w==", "power"=>{"title"=>"Web Creation", "description"=>"Spiderman"}, "commit"=>"Submit"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/powers_controller.rb:18:in `create'
+  [1m[36mPower Create (0.4ms)[0m  [1m[32mINSERT INTO "powers" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Web Creation"], ["description", "Spiderman"], ["created_at", "2020-11-02 21:27:42.073698"], ["updated_at", "2020-11-02 21:27:42.073698"]]
+  ↳ app/controllers/powers_controller.rb:18:in `create'
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/powers_controller.rb:18:in `create'
+Redirected to http://localhost:3000/powers/22
+Completed 302 Found in 7ms (ActiveRecord: 1.3ms | Allocations: 2794)
+
+
+Started GET "/powers/22" for ::1 at 2020-11-02 16:27:42 -0500
+Processing by PowersController#show as HTML
+  Parameters: {"id"=>"22"}
+  [1m[36mPower Load (0.1ms)[0m  [1m[34mSELECT "powers".* FROM "powers" WHERE "powers"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  ↳ app/controllers/powers_controller.rb:43:in `set_power'
+  Rendering powers/show.html.erb within layouts/application
+  [1m[36mHero Load (0.1ms)[0m  [1m[34mSELECT "heros".* FROM "heros" INNER JOIN "hero_powers" ON "heros"."id" = "hero_powers"."hero_id" WHERE "hero_powers"."power_id" = ?[0m  [["power_id", 22]]
+  ↳ app/views/powers/show.html.erb:5
+  Rendered powers/show.html.erb within layouts/application (Duration: 1.2ms | Allocations: 1029)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 7ms (Views: 5.4ms | ActiveRecord: 0.2ms | Allocations: 5517)
+
+
+Started GET "/powers" for ::1 at 2020-11-02 16:27:47 -0500
+Processing by PowersController#index as HTML
+  Rendering powers/index.html.erb within layouts/application
+  [1m[36mPower Load (0.4ms)[0m  [1m[34mSELECT "powers".* FROM "powers"[0m
+  ↳ app/views/powers/index.html.erb:4
+  Rendered powers/index.html.erb within layouts/application (Duration: 3.2ms | Allocations: 1049)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 12ms (Views: 10.4ms | ActiveRecord: 0.4ms | Allocations: 5000)
+
+
+Started GET "/powers/22" for ::1 at 2020-11-02 16:27:49 -0500
+Processing by PowersController#show as HTML
+  Parameters: {"id"=>"22"}
+  [1m[36mPower Load (0.2ms)[0m  [1m[34mSELECT "powers".* FROM "powers" WHERE "powers"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  ↳ app/controllers/powers_controller.rb:43:in `set_power'
+  Rendering powers/show.html.erb within layouts/application
+  [1m[36mHero Load (0.2ms)[0m  [1m[34mSELECT "heros".* FROM "heros" INNER JOIN "hero_powers" ON "heros"."id" = "hero_powers"."hero_id" WHERE "hero_powers"."power_id" = ?[0m  [["power_id", 22]]
+  ↳ app/views/powers/show.html.erb:5
+  Rendered powers/show.html.erb within layouts/application (Duration: 2.8ms | Allocations: 1027)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 16ms (Views: 12.6ms | ActiveRecord: 0.4ms | Allocations: 5514)
+
+
+Started DELETE "/powers/22" for ::1 at 2020-11-02 16:27:50 -0500
+Processing by PowersController#destroy as HTML
+  Parameters: {"authenticity_token"=>"VbpA+4bBkixo8TPHXsjR+1T5wBsjqWX6mjlw6f47+jdP2OlzhPUuuvdjMqy/PjbuEEAIMr8qtgImUEbvbuRieA==", "id"=>"22"}
+  [1m[36mPower Load (0.3ms)[0m  [1m[34mSELECT "powers".* FROM "powers" WHERE "powers"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  ↳ app/controllers/powers_controller.rb:43:in `set_power'
+  [1m[36mPower Destroy (1.4ms)[0m  [1m[31mDELETE FROM "powers" WHERE "powers"."id" = ?[0m  [["id", 22]]
+  ↳ app/controllers/powers_controller.rb:32:in `destroy'
+Redirected to http://localhost:3000/powers
+Completed 302 Found in 5ms (ActiveRecord: 1.7ms | Allocations: 1294)
+
+
+Started GET "/powers" for ::1 at 2020-11-02 16:27:50 -0500
+Processing by PowersController#index as HTML
+  Rendering powers/index.html.erb within layouts/application
+  [1m[36mPower Load (0.1ms)[0m  [1m[34mSELECT "powers".* FROM "powers"[0m
+  ↳ app/views/powers/index.html.erb:4
+  Rendered powers/index.html.erb within layouts/application (Duration: 1.1ms | Allocations: 1010)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 6ms (Views: 5.3ms | ActiveRecord: 0.1ms | Allocations: 4961)
+
+
+Started GET "/heros" for ::1 at 2020-11-02 16:27:56 -0500
+Processing by HerosController#index as HTML
+  Rendering heros/index.html.erb within layouts/application
+  [1m[36mHero Load (0.2ms)[0m  [1m[34mSELECT "heros".* FROM "heros"[0m
+  ↳ app/views/heros/index.html.erb:4
+  Rendered heros/index.html.erb within layouts/application (Duration: 1.7ms | Allocations: 1146)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 8ms (Views: 6.6ms | ActiveRecord: 0.2ms | Allocations: 5676)
+
+
+Started GET "/heros/21" for ::1 at 2020-11-02 16:27:59 -0500
+Processing by HerosController#show as HTML
+  Parameters: {"id"=>"21"}
+  [1m[36mHero Load (0.4ms)[0m  [1m[34mSELECT "heros".* FROM "heros" WHERE "heros"."id" = ? LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/controllers/heros_controller.rb:41:in `set_super_hero'
+  Rendering heros/show.html.erb within layouts/application
+  [1m[36mPower Load (0.4ms)[0m  [1m[34mSELECT "powers".* FROM "powers" INNER JOIN "hero_powers" ON "powers"."id" = "hero_powers"."power_id" WHERE "hero_powers"."hero_id" = ?[0m  [["hero_id", 21]]
+  ↳ app/views/heros/show.html.erb:5
+  Rendered heros/show.html.erb within layouts/application (Duration: 4.1ms | Allocations: 2660)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 15ms (Views: 10.5ms | ActiveRecord: 0.7ms | Allocations: 7305)
+
+
+Started DELETE "/heros/21" for ::1 at 2020-11-02 16:28:00 -0500
+Processing by HerosController#destroy as HTML
+  Parameters: {"authenticity_token"=>"9OX4lG9PC9T3qCxQgDdWwxBxGP0tz2euKqboIMl/+U3uh1EcbXu3Qmg6LTthwbHWVMjQ1LFMtFaWz94mWaBhAg==", "id"=>"21"}
+  [1m[36mHero Load (0.3ms)[0m  [1m[34mSELECT "heros".* FROM "heros" WHERE "heros"."id" = ? LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/controllers/heros_controller.rb:41:in `set_super_hero'
+  [1m[36mHero Destroy (1.6ms)[0m  [1m[31mDELETE FROM "heros" WHERE "heros"."id" = ?[0m  [["id", 21]]
+  ↳ app/controllers/heros_controller.rb:30:in `destroy'
+Redirected to http://localhost:3000/heros
+Completed 302 Found in 5ms (ActiveRecord: 1.8ms | Allocations: 1290)
+
+
+Started GET "/heros" for ::1 at 2020-11-02 16:28:00 -0500
+Processing by HerosController#index as HTML
+  Rendering heros/index.html.erb within layouts/application
+  [1m[36mHero Load (0.1ms)[0m  [1m[34mSELECT "heros".* FROM "heros"[0m
+  ↳ app/views/heros/index.html.erb:4
+  Rendered heros/index.html.erb within layouts/application (Duration: 15.9ms | Allocations: 951)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 23ms (Views: 22.0ms | ActiveRecord: 0.1ms | Allocations: 4907)
+
+
