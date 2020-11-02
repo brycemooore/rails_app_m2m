@@ -1,0 +1,6 @@
+<h1>Add a power to <%= @super_hero.name %> </h1>
+
+<%= form_for @super_hero do |h| %>
+    <%= h.collection_check_boxes :power_ids, Power.all, :id, :title %>
+    <%= h.submit %>
+<%end%>

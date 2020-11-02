@@ -10,6 +10,21 @@
   </head>
 
   <body>
+<nav class="navbar navbar-light bg-light">
+  <a class="navbar-brand" href="/">Home</a>
+  <form class="form-inline">
+  <div style="padding-left: 10px;">
+    <a class="btn btn-outline-primary" href=<%= heros_path%> role="button">
+    Heroes
+    </a>
+    </div>
+    <div style="padding-left: 10px;">
+      <a class="btn btn-outline-success" href=<%= powers_path%> role="button">
+      Powers
+      </a>
+    </div>
+  </form>
+</nav>
     <%= yield %>
   </body>
 </html>

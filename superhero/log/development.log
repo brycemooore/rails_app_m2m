@@ -4995,3 +4995,832 @@ Processing by HerosController#index as HTML
 Completed 200 OK in 23ms (Views: 22.0ms | ActiveRecord: 0.1ms | Allocations: 4907)
 
 
+Started GET "/heros" for ::1 at 2020-11-02 16:59:57 -0500
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+SyntaxError (/Users/bryce/Development/code/labs/rails_app_m2m/superhero/app/controllers/heros_controller.rb:2: syntax error, unexpected ',', expecting ']'
+...ction :set_super_hero, only: [, :power_select, :show, :edit,...
+...                              ^):
+  
+app/controllers/heros_controller.rb:2: syntax error, unexpected ',', expecting ']'
+app/controllers/heros_controller.rb:2: syntax error, unexpected ',', expecting ']'
+app/controllers/heros_controller.rb:2: syntax error, unexpected ',', expecting ']'
+Started GET "/heros" for ::1 at 2020-11-02 17:00:14 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by HerosController#index as HTML
+  Rendering heros/index.html.erb within layouts/application
+  [1m[36mHero Load (0.9ms)[0m  [1m[34mSELECT "heros".* FROM "heros"[0m
+  ↳ app/views/heros/index.html.erb:4
+  Rendered heros/index.html.erb within layouts/application (Duration: 21.0ms | Allocations: 4894)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 73ms (Views: 57.6ms | ActiveRecord: 2.1ms | Allocations: 14015)
+
+
+Started GET "/heros/16" for ::1 at 2020-11-02 17:00:20 -0500
+Processing by HerosController#show as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mHero Load (0.3ms)[0m  [1m[34mSELECT "heros".* FROM "heros" WHERE "heros"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/heros_controller.rb:45:in `set_super_hero'
+  Rendering heros/show.html.erb within layouts/application
+  [1m[36mPower Load (0.4ms)[0m  [1m[34mSELECT "powers".* FROM "powers" INNER JOIN "hero_powers" ON "powers"."id" = "hero_powers"."power_id" WHERE "hero_powers"."hero_id" = ?[0m  [["hero_id", 16]]
+  ↳ app/views/heros/show.html.erb:5
+  Rendered heros/show.html.erb within layouts/application (Duration: 28.6ms | Allocations: 11798)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 53ms (Views: 35.9ms | ActiveRecord: 1.6ms | Allocations: 18757)
+
+
+Started GET "/heros/16/select-power" for ::1 at 2020-11-02 17:00:39 -0500
+Processing by HerosController#power_select as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mHero Load (0.2ms)[0m  [1m[34mSELECT "heros".* FROM "heros" WHERE "heros"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/heros_controller.rb:45:in `set_super_hero'
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.2ms | Allocations: 1542)
+
+
+  
+NoMethodError (undefined method `id' for nil:NilClass):
+  
+app/controllers/heros_controller.rb:35:in `power_select'
+Started GET "/heros/16/select-power" for ::1 at 2020-11-02 17:01:26 -0500
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by HerosController#power_select as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mHero Load (0.5ms)[0m  [1m[34mSELECT "heros".* FROM "heros" WHERE "heros"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/heros_controller.rb:45:in `set_super_hero'
+Redirected to http://localhost:3000/heros/16
+Completed 302 Found in 27ms (ActiveRecord: 2.9ms | Allocations: 5825)
+
+
+Started GET "/heros/16" for ::1 at 2020-11-02 17:01:27 -0500
+Processing by HerosController#show as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mHero Load (0.3ms)[0m  [1m[34mSELECT "heros".* FROM "heros" WHERE "heros"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/heros_controller.rb:45:in `set_super_hero'
+  Rendering heros/show.html.erb within layouts/application
+  [1m[36mPower Load (0.4ms)[0m  [1m[34mSELECT "powers".* FROM "powers" INNER JOIN "hero_powers" ON "powers"."id" = "hero_powers"."power_id" WHERE "hero_powers"."hero_id" = ?[0m  [["hero_id", 16]]
+  ↳ app/views/heros/show.html.erb:5
+  Rendered heros/show.html.erb within layouts/application (Duration: 59.6ms | Allocations: 8716)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 80ms (Views: 72.2ms | ActiveRecord: 3.3ms | Allocations: 13268)
+
+
+Started GET "/heros/16/select-power" for ::1 at 2020-11-02 17:01:35 -0500
+Processing by HerosController#power_select as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mHero Load (0.2ms)[0m  [1m[34mSELECT "heros".* FROM "heros" WHERE "heros"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/heros_controller.rb:45:in `set_super_hero'
+Redirected to http://localhost:3000/heros/16
+Completed 302 Found in 3ms (ActiveRecord: 0.2ms | Allocations: 831)
+
+
+Started GET "/heros/16" for ::1 at 2020-11-02 17:01:35 -0500
+Processing by HerosController#show as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mHero Load (0.7ms)[0m  [1m[34mSELECT "heros".* FROM "heros" WHERE "heros"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/heros_controller.rb:45:in `set_super_hero'
+  Rendering heros/show.html.erb within layouts/application
+  [1m[36mPower Load (0.2ms)[0m  [1m[34mSELECT "powers".* FROM "powers" INNER JOIN "hero_powers" ON "powers"."id" = "hero_powers"."power_id" WHERE "hero_powers"."hero_id" = ?[0m  [["hero_id", 16]]
+  ↳ app/views/heros/show.html.erb:5
+  Rendered heros/show.html.erb within layouts/application (Duration: 3.0ms | Allocations: 1067)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 23ms (Views: 18.6ms | ActiveRecord: 0.9ms | Allocations: 5557)
+
+
+Started GET "/heros/16/select-power" for ::1 at 2020-11-02 17:02:02 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by HerosController#power_select as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mHero Load (0.3ms)[0m  [1m[34mSELECT "heros".* FROM "heros" WHERE "heros"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/heros_controller.rb:45:in `set_super_hero'
+  Rendering heros/power_select.html.erb within layouts/application
+  Rendered heros/power_select.html.erb within layouts/application (Duration: 10.2ms | Allocations: 2786)
+Completed 500 Internal Server Error in 39ms (ActiveRecord: 2.9ms | Allocations: 8997)
+
+
+  
+ActionView::Template::Error (undefined method `merge' for :title:Symbol):
+    1: <h1>Add a power to <%= @super_hero.name %> </h1>
+    2: 
+    3: <%= form_for @super_hero do |h| %>
+    4:     <%= h.collection_select :super_hero, :power_id, Power.all, :id, :title %>
+    5:     <%= h.submit %>
+    6: <%end%>
+  
+app/views/heros/power_select.html.erb:4
+app/views/heros/power_select.html.erb:3
+Started GET "/heros/16/select-power" for ::1 at 2020-11-02 17:03:04 -0500
+Processing by HerosController#power_select as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mHero Load (0.2ms)[0m  [1m[34mSELECT "heros".* FROM "heros" WHERE "heros"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/heros_controller.rb:45:in `set_super_hero'
+  Rendering heros/power_select.html.erb within layouts/application
+  Rendered heros/power_select.html.erb within layouts/application (Duration: 18.1ms | Allocations: 5022)
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 0.2ms | Allocations: 6726)
+
+
+  
+ActionView::Template::Error (undefined method `power_id' for #<Hero:0x00007f964e163960>
+Did you mean?  power_ids
+               power_ids=):
+    1: <h1>Add a power to <%= @super_hero.name %> </h1>
+    2: 
+    3: <%= form_for @super_hero do |h| %>
+    4:     <%= h.collection_select :power_id, Power.all, :id, :title %>
+    5:     <%= h.submit %>
+    6: <%end%>
+  
+app/views/heros/power_select.html.erb:4
+app/views/heros/power_select.html.erb:3
+Started GET "/heros/16/select-power" for ::1 at 2020-11-02 17:05:35 -0500
+Processing by HerosController#power_select as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mHero Load (0.2ms)[0m  [1m[34mSELECT "heros".* FROM "heros" WHERE "heros"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/heros_controller.rb:45:in `set_super_hero'
+  Rendering heros/power_select.html.erb within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "powers"."id" FROM "powers" INNER JOIN "hero_powers" ON "powers"."id" = "hero_powers"."power_id" WHERE "hero_powers"."hero_id" = ?[0m  [["hero_id", 16]]
+  ↳ app/views/heros/power_select.html.erb:4
+  [1m[36mPower Load (0.2ms)[0m  [1m[34mSELECT "powers".* FROM "powers"[0m
+  ↳ app/views/heros/power_select.html.erb:4
+  Rendered heros/power_select.html.erb within layouts/application (Duration: 254.5ms | Allocations: 208223)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 269ms (Views: 264.1ms | ActiveRecord: 2.2ms | Allocations: 213560)
+
+
+Started GET "/heros/16/select-power" for ::1 at 2020-11-02 17:08:51 -0500
+Processing by HerosController#power_select as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mHero Load (0.2ms)[0m  [1m[34mSELECT "heros".* FROM "heros" WHERE "heros"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/heros_controller.rb:45:in `set_super_hero'
+  Rendering heros/power_select.html.erb within layouts/application
+  [1m[36mPower Load (0.2ms)[0m  [1m[34mSELECT "powers".* FROM "powers"[0m
+  ↳ app/views/heros/power_select.html.erb:4
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "powers"."id" FROM "powers" INNER JOIN "hero_powers" ON "powers"."id" = "hero_powers"."power_id" WHERE "hero_powers"."hero_id" = ?[0m  [["hero_id", 16]]
+  ↳ app/views/heros/power_select.html.erb:4
+  Rendered heros/power_select.html.erb within layouts/application (Duration: 20.7ms | Allocations: 6905)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 33ms (Views: 30.0ms | ActiveRecord: 0.6ms | Allocations: 12221)
+
+
+Started PATCH "/heros/16" for ::1 at 2020-11-02 17:12:08 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by HerosController#update as HTML
+  Parameters: {"authenticity_token"=>"AT36pEXdnDm1dpiGfEw7lPQAPOW1QWEyCLBr9pEyiXUbX1MsR+kgryrkme2dutyBsLn0zCnCssq02V3wAe0ROg==", "hero"=>{"power_ids"=>["", "18", "20"]}, "commit"=>"Update Hero", "id"=>"16"}
+  [1m[36mHero Load (0.2ms)[0m  [1m[34mSELECT "heros".* FROM "heros" WHERE "heros"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/heros_controller.rb:46:in `set_super_hero'
+[31mUnpermitted parameter: :power_ids[0m
+Redirected to http://localhost:3000/heros/16
+Completed 302 Found in 87298ms (ActiveRecord: 0.6ms | Allocations: 60607)
+
+
+Started GET "/heros/16" for ::1 at 2020-11-02 17:13:35 -0500
+Processing by HerosController#show as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mHero Load (0.6ms)[0m  [1m[34mSELECT "heros".* FROM "heros" WHERE "heros"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/heros_controller.rb:46:in `set_super_hero'
+  Rendering heros/show.html.erb within layouts/application
+  [1m[36mPower Load (0.5ms)[0m  [1m[34mSELECT "powers".* FROM "powers" INNER JOIN "hero_powers" ON "powers"."id" = "hero_powers"."power_id" WHERE "hero_powers"."hero_id" = ?[0m  [["hero_id", 16]]
+  ↳ app/views/heros/show.html.erb:5
+  Rendered heros/show.html.erb within layouts/application (Duration: 92.7ms | Allocations: 14445)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 122ms (Views: 107.6ms | ActiveRecord: 4.6ms | Allocations: 20305)
+
+
+Started GET "/heros/16/select-power" for ::1 at 2020-11-02 17:13:45 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by HerosController#power_select as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mHero Load (0.4ms)[0m  [1m[34mSELECT "heros".* FROM "heros" WHERE "heros"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/heros_controller.rb:46:in `set_super_hero'
+  Rendering heros/power_select.html.erb within layouts/application
+  [1m[36mPower Load (0.4ms)[0m  [1m[34mSELECT "powers".* FROM "powers"[0m
+  ↳ app/views/heros/power_select.html.erb:4
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "powers"."id" FROM "powers" INNER JOIN "hero_powers" ON "powers"."id" = "hero_powers"."power_id" WHERE "hero_powers"."hero_id" = ?[0m  [["hero_id", 16]]
+  ↳ app/views/heros/power_select.html.erb:4
+  Rendered heros/power_select.html.erb within layouts/application (Duration: 43.8ms | Allocations: 10797)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 88ms (Views: 56.6ms | ActiveRecord: 5.5ms | Allocations: 20297)
+
+
+Started PATCH "/heros/16" for ::1 at 2020-11-02 17:13:51 -0500
+Processing by HerosController#update as HTML
+  Parameters: {"authenticity_token"=>"uKPXNRfK8xjPNtN7px1FSHu0XL8pXXrYaWfkaEW3iqKiwX69Ff5PjlCk0hBG66JdPw2UlrXeqSDVDtJu1WgS7Q==", "hero"=>{"power_ids"=>["", "12", "20"]}, "commit"=>"Update Hero", "id"=>"16"}
+  [1m[36mHero Load (0.3ms)[0m  [1m[34mSELECT "heros".* FROM "heros" WHERE "heros"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/heros_controller.rb:46:in `set_super_hero'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/heros_controller.rb:26:in `update'
+  [1m[36mPower Load (0.5ms)[0m  [1m[34mSELECT "powers".* FROM "powers" WHERE "powers"."id" IN (?, ?)[0m  [["id", 12], ["id", 20]]
+  ↳ app/controllers/heros_controller.rb:26:in `update'
+  [1m[36mPower Load (0.3ms)[0m  [1m[34mSELECT "powers".* FROM "powers" INNER JOIN "hero_powers" ON "powers"."id" = "hero_powers"."power_id" WHERE "hero_powers"."hero_id" = ?[0m  [["hero_id", 16]]
+  ↳ app/controllers/heros_controller.rb:26:in `update'
+  [1m[36mHeroPower Destroy (0.5ms)[0m  [1m[31mDELETE FROM "hero_powers" WHERE "hero_powers"."hero_id" = ? AND "hero_powers"."power_id" = ?[0m  [["hero_id", 16], ["power_id", 18]]
+  ↳ app/controllers/heros_controller.rb:26:in `update'
+  [1m[36mHeroPower Create (0.3ms)[0m  [1m[32mINSERT INTO "hero_powers" ("hero_id", "power_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["hero_id", 16], ["power_id", 12], ["created_at", "2020-11-02 22:14:01.375984"], ["updated_at", "2020-11-02 22:14:01.375984"]]
+  ↳ app/controllers/heros_controller.rb:26:in `update'
+  [1m[36mHeroPower Create (0.2ms)[0m  [1m[32mINSERT INTO "hero_powers" ("hero_id", "power_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["hero_id", 16], ["power_id", 20], ["created_at", "2020-11-02 22:14:01.378898"], ["updated_at", "2020-11-02 22:14:01.378898"]]
+  ↳ app/controllers/heros_controller.rb:26:in `update'
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/heros_controller.rb:26:in `update'
+Redirected to http://localhost:3000/heros/16
+Completed 302 Found in 10043ms (ActiveRecord: 3.6ms | Allocations: 15199)
+
+
+Started GET "/heros/16" for ::1 at 2020-11-02 17:14:01 -0500
+Processing by HerosController#show as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mHero Load (0.3ms)[0m  [1m[34mSELECT "heros".* FROM "heros" WHERE "heros"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/heros_controller.rb:46:in `set_super_hero'
+  Rendering heros/show.html.erb within layouts/application
+  [1m[36mPower Load (0.4ms)[0m  [1m[34mSELECT "powers".* FROM "powers" INNER JOIN "hero_powers" ON "powers"."id" = "hero_powers"."power_id" WHERE "hero_powers"."hero_id" = ?[0m  [["hero_id", 16]]
+  ↳ app/views/heros/show.html.erb:5
+  Rendered heros/show.html.erb within layouts/application (Duration: 4.9ms | Allocations: 1110)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 40ms (Views: 36.4ms | ActiveRecord: 0.7ms | Allocations: 5597)
+
+
+Started GET "/heros/16/select-power" for ::1 at 2020-11-02 17:15:18 -0500
+Processing by HerosController#power_select as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mHero Load (0.3ms)[0m  [1m[34mSELECT "heros".* FROM "heros" WHERE "heros"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/heros_controller.rb:46:in `set_super_hero'
+  Rendering heros/power_select.html.erb within layouts/application
+  [1m[36mPower Load (0.1ms)[0m  [1m[34mSELECT "powers".* FROM "powers"[0m
+  ↳ app/views/heros/power_select.html.erb:4
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "powers"."id" FROM "powers" INNER JOIN "hero_powers" ON "powers"."id" = "hero_powers"."power_id" WHERE "hero_powers"."hero_id" = ?[0m  [["hero_id", 16]]
+  ↳ app/views/heros/power_select.html.erb:4
+  Rendered heros/power_select.html.erb within layouts/application (Duration: 4.3ms | Allocations: 3216)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 15ms (Views: 12.2ms | ActiveRecord: 0.5ms | Allocations: 7707)
+
+
+Started PATCH "/heros/16" for ::1 at 2020-11-02 17:15:22 -0500
+Processing by HerosController#update as HTML
+  Parameters: {"authenticity_token"=>"TFCIusCQG180fdWN5LcsHd8/C/xPBfa0rsgkp+f+CYJWMiEywqSnyavv1OYFQcsIm4bD1dOGJUwSoRKhdyGRzQ==", "hero"=>{"power_ids"=>["", "11", "21"]}, "commit"=>"Update Hero", "id"=>"16"}
+  [1m[36mHero Load (0.2ms)[0m  [1m[34mSELECT "heros".* FROM "heros" WHERE "heros"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/heros_controller.rb:46:in `set_super_hero'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/heros_controller.rb:26:in `update'
+  [1m[36mPower Load (0.3ms)[0m  [1m[34mSELECT "powers".* FROM "powers" WHERE "powers"."id" IN (?, ?)[0m  [["id", 11], ["id", 21]]
+  ↳ app/controllers/heros_controller.rb:26:in `update'
+  [1m[36mPower Load (0.1ms)[0m  [1m[34mSELECT "powers".* FROM "powers" INNER JOIN "hero_powers" ON "powers"."id" = "hero_powers"."power_id" WHERE "hero_powers"."hero_id" = ?[0m  [["hero_id", 16]]
+  ↳ app/controllers/heros_controller.rb:26:in `update'
+  [1m[36mHeroPower Destroy (0.4ms)[0m  [1m[31mDELETE FROM "hero_powers" WHERE "hero_powers"."hero_id" = ? AND "hero_powers"."power_id" IN (?, ?)[0m  [["hero_id", 16], ["power_id", 12], ["power_id", 20]]
+  ↳ app/controllers/heros_controller.rb:26:in `update'
+  [1m[36mHeroPower Create (0.2ms)[0m  [1m[32mINSERT INTO "hero_powers" ("hero_id", "power_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["hero_id", 16], ["power_id", 11], ["created_at", "2020-11-02 22:15:29.656378"], ["updated_at", "2020-11-02 22:15:29.656378"]]
+  ↳ app/controllers/heros_controller.rb:26:in `update'
+  [1m[36mHeroPower Create (0.1ms)[0m  [1m[32mINSERT INTO "hero_powers" ("hero_id", "power_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["hero_id", 16], ["power_id", 21], ["created_at", "2020-11-02 22:15:29.661801"], ["updated_at", "2020-11-02 22:15:29.661801"]]
+  ↳ app/controllers/heros_controller.rb:26:in `update'
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/heros_controller.rb:26:in `update'
+Redirected to http://localhost:3000/heros/16
+Completed 302 Found in 6740ms (ActiveRecord: 2.7ms | Allocations: 10765)
+
+
+Started GET "/heros/16" for ::1 at 2020-11-02 17:15:29 -0500
+Processing by HerosController#show as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mHero Load (0.2ms)[0m  [1m[34mSELECT "heros".* FROM "heros" WHERE "heros"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/heros_controller.rb:46:in `set_super_hero'
+  Rendering heros/show.html.erb within layouts/application
+  [1m[36mPower Load (0.1ms)[0m  [1m[34mSELECT "powers".* FROM "powers" INNER JOIN "hero_powers" ON "powers"."id" = "hero_powers"."power_id" WHERE "hero_powers"."hero_id" = ?[0m  [["hero_id", 16]]
+  ↳ app/views/heros/show.html.erb:5
+  Rendered heros/show.html.erb within layouts/application (Duration: 1.8ms | Allocations: 1103)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 10ms (Views: 8.4ms | ActiveRecord: 0.3ms | Allocations: 5590)
+
+
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mPower Load (0.1ms)[0m  [1m[34mSELECT "powers".* FROM "powers" ORDER BY "powers"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "heros"."id" FROM "heros" INNER JOIN "hero_powers" ON "heros"."id" = "hero_powers"."hero_id" WHERE "hero_powers"."power_id" = ?[0m  [["power_id", 11]]
+  [1m[36mPower Load (0.1ms)[0m  [1m[34mSELECT "powers".* FROM "powers" ORDER BY "powers"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+Started GET "/heros/16/select-power" for ::1 at 2020-11-02 17:18:45 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by HerosController#power_select as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mHero Load (0.3ms)[0m  [1m[34mSELECT "heros".* FROM "heros" WHERE "heros"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/heros_controller.rb:45:in `set_super_hero'
+  Rendering heros/power_select.html.erb within layouts/application
+  [1m[36mPower Load (0.3ms)[0m  [1m[34mSELECT "powers".* FROM "powers"[0m
+  ↳ app/views/heros/power_select.html.erb:4
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "powers"."id" FROM "powers" INNER JOIN "hero_powers" ON "powers"."id" = "hero_powers"."power_id" WHERE "hero_powers"."hero_id" = ?[0m  [["hero_id", 16]]
+  ↳ app/views/heros/power_select.html.erb:4
+  Rendered heros/power_select.html.erb within layouts/application (Duration: 22.9ms | Allocations: 10808)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 48ms (Views: 28.6ms | ActiveRecord: 3.7ms | Allocations: 20326)
+
+
+Started PATCH "/heros/16" for ::1 at 2020-11-02 17:19:05 -0500
+Processing by HerosController#update as HTML
+  Parameters: {"authenticity_token"=>"XsTn2sInYyyM2t/UMYcS3Sk6gvikzwDlGBnsfuySje5Epk5SwBPfuhNI3r/QcfXIbYNK0ThM0x2kcNp4fE0VoQ==", "hero"=>{"power_ids"=>[""]}, "commit"=>"Update Hero", "id"=>"16"}
+  [1m[36mHero Load (0.2ms)[0m  [1m[34mSELECT "heros".* FROM "heros" WHERE "heros"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/heros_controller.rb:45:in `set_super_hero'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/heros_controller.rb:25:in `update'
+  [1m[36mPower Load (0.6ms)[0m  [1m[34mSELECT "powers".* FROM "powers" WHERE 1=0[0m
+  ↳ app/controllers/heros_controller.rb:25:in `update'
+  [1m[36mPower Load (0.1ms)[0m  [1m[34mSELECT "powers".* FROM "powers" INNER JOIN "hero_powers" ON "powers"."id" = "hero_powers"."power_id" WHERE "hero_powers"."hero_id" = ?[0m  [["hero_id", 16]]
+  ↳ app/controllers/heros_controller.rb:25:in `update'
+  [1m[36mHeroPower Destroy (0.3ms)[0m  [1m[31mDELETE FROM "hero_powers" WHERE "hero_powers"."hero_id" = ? AND "hero_powers"."power_id" IN (?, ?)[0m  [["hero_id", 16], ["power_id", 11], ["power_id", 21]]
+  ↳ app/controllers/heros_controller.rb:25:in `update'
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/heros_controller.rb:25:in `update'
+Redirected to http://localhost:3000/heros/16
+Completed 302 Found in 13ms (ActiveRecord: 2.7ms | Allocations: 6257)
+
+
+Started GET "/heros/16" for ::1 at 2020-11-02 17:19:05 -0500
+Processing by HerosController#show as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mHero Load (0.2ms)[0m  [1m[34mSELECT "heros".* FROM "heros" WHERE "heros"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/heros_controller.rb:45:in `set_super_hero'
+  Rendering heros/show.html.erb within layouts/application
+  [1m[36mPower Load (0.1ms)[0m  [1m[34mSELECT "powers".* FROM "powers" INNER JOIN "hero_powers" ON "powers"."id" = "hero_powers"."power_id" WHERE "hero_powers"."hero_id" = ?[0m  [["hero_id", 16]]
+  ↳ app/views/heros/show.html.erb:5
+  Rendered heros/show.html.erb within layouts/application (Duration: 2.2ms | Allocations: 1032)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 10ms (Views: 8.1ms | ActiveRecord: 0.3ms | Allocations: 5519)
+
+
+Started GET "/rails/routes" for ::1 at 2020-11-02 17:21:33 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/rails/routes"):
+  
+actionpack (6.0.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.4) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.4) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.4) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/heros" for ::1 at 2020-11-02 17:21:45 -0500
+Processing by HerosController#index as HTML
+  Rendering heros/index.html.erb within layouts/application
+  [1m[36mHero Load (0.4ms)[0m  [1m[34mSELECT "heros".* FROM "heros"[0m
+  ↳ app/views/heros/index.html.erb:4
+  Rendered heros/index.html.erb within layouts/application (Duration: 2.9ms | Allocations: 1106)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 17ms (Views: 15.0ms | ActiveRecord: 0.4ms | Allocations: 5991)
+
+
+Started GET "/heros/20" for ::1 at 2020-11-02 17:21:47 -0500
+Processing by HerosController#show as HTML
+  Parameters: {"id"=>"20"}
+  [1m[36mHero Load (0.2ms)[0m  [1m[34mSELECT "heros".* FROM "heros" WHERE "heros"."id" = ? LIMIT ?[0m  [["id", 20], ["LIMIT", 1]]
+  ↳ app/controllers/heros_controller.rb:45:in `set_super_hero'
+  Rendering heros/show.html.erb within layouts/application
+  [1m[36mPower Load (0.2ms)[0m  [1m[34mSELECT "powers".* FROM "powers" INNER JOIN "hero_powers" ON "powers"."id" = "hero_powers"."power_id" WHERE "hero_powers"."hero_id" = ?[0m  [["hero_id", 20]]
+  ↳ app/views/heros/show.html.erb:5
+  Rendered heros/show.html.erb within layouts/application (Duration: 3.3ms | Allocations: 1298)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 17ms (Views: 13.4ms | ActiveRecord: 0.4ms | Allocations: 5921)
+
+
+Started GET "/heros/20" for ::1 at 2020-11-02 17:21:58 -0500
+Processing by HerosController#show as HTML
+  Parameters: {"id"=>"20"}
+  [1m[36mHero Load (0.2ms)[0m  [1m[34mSELECT "heros".* FROM "heros" WHERE "heros"."id" = ? LIMIT ?[0m  [["id", 20], ["LIMIT", 1]]
+  ↳ app/controllers/heros_controller.rb:45:in `set_super_hero'
+  Rendering heros/show.html.erb within layouts/application
+  [1m[36mPower Load (0.2ms)[0m  [1m[34mSELECT "powers".* FROM "powers" INNER JOIN "hero_powers" ON "powers"."id" = "hero_powers"."power_id" WHERE "hero_powers"."hero_id" = ?[0m  [["hero_id", 20]]
+  ↳ app/views/heros/show.html.erb:5
+  Rendered heros/show.html.erb within layouts/application (Duration: 3.1ms | Allocations: 1338)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 16ms (Views: 13.1ms | ActiveRecord: 0.4ms | Allocations: 6750)
+
+
+Started GET "/heros/20/select-power" for ::1 at 2020-11-02 17:21:59 -0500
+Processing by HerosController#power_select as HTML
+  Parameters: {"id"=>"20"}
+  [1m[36mHero Load (0.2ms)[0m  [1m[34mSELECT "heros".* FROM "heros" WHERE "heros"."id" = ? LIMIT ?[0m  [["id", 20], ["LIMIT", 1]]
+  ↳ app/controllers/heros_controller.rb:45:in `set_super_hero'
+  Rendering heros/power_select.html.erb within layouts/application
+  [1m[36mPower Load (0.2ms)[0m  [1m[34mSELECT "powers".* FROM "powers"[0m
+  ↳ app/views/heros/power_select.html.erb:4
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "powers"."id" FROM "powers" INNER JOIN "hero_powers" ON "powers"."id" = "hero_powers"."power_id" WHERE "hero_powers"."hero_id" = ?[0m  [["hero_id", 20]]
+  ↳ app/views/heros/power_select.html.erb:4
+  Rendered heros/power_select.html.erb within layouts/application (Duration: 7.9ms | Allocations: 3380)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 18ms (Views: 15.1ms | ActiveRecord: 0.6ms | Allocations: 8012)
+
+
+Started PATCH "/heros/20" for ::1 at 2020-11-02 17:22:02 -0500
+Processing by HerosController#update as HTML
+  Parameters: {"authenticity_token"=>"eNwSbCU49s9F0dJAn3Fis9Br3t9BobGvMIhXE8RdeYyJzp+NFo+vAsDkQTa8sFuBqNlGpdKOI7fWGQWq1j7dMQ==", "hero"=>{"power_ids"=>["", "12", "13"]}, "commit"=>"Update Hero", "id"=>"20"}
+  [1m[36mHero Load (0.2ms)[0m  [1m[34mSELECT "heros".* FROM "heros" WHERE "heros"."id" = ? LIMIT ?[0m  [["id", 20], ["LIMIT", 1]]
+  ↳ app/controllers/heros_controller.rb:45:in `set_super_hero'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/heros_controller.rb:25:in `update'
+  [1m[36mPower Load (0.3ms)[0m  [1m[34mSELECT "powers".* FROM "powers" WHERE "powers"."id" IN (?, ?)[0m  [["id", 12], ["id", 13]]
+  ↳ app/controllers/heros_controller.rb:25:in `update'
+  [1m[36mPower Load (0.1ms)[0m  [1m[34mSELECT "powers".* FROM "powers" INNER JOIN "hero_powers" ON "powers"."id" = "hero_powers"."power_id" WHERE "hero_powers"."hero_id" = ?[0m  [["hero_id", 20]]
+  ↳ app/controllers/heros_controller.rb:25:in `update'
+  [1m[36mHeroPower Create (0.5ms)[0m  [1m[32mINSERT INTO "hero_powers" ("hero_id", "power_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["hero_id", 20], ["power_id", 13], ["created_at", "2020-11-02 22:22:02.343251"], ["updated_at", "2020-11-02 22:22:02.343251"]]
+  ↳ app/controllers/heros_controller.rb:25:in `update'
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/heros_controller.rb:25:in `update'
+Redirected to http://localhost:3000/heros/20
+Completed 302 Found in 20ms (ActiveRecord: 2.3ms | Allocations: 9725)
+
+
+Started GET "/heros/20" for ::1 at 2020-11-02 17:22:02 -0500
+Processing by HerosController#show as HTML
+  Parameters: {"id"=>"20"}
+  [1m[36mHero Load (0.2ms)[0m  [1m[34mSELECT "heros".* FROM "heros" WHERE "heros"."id" = ? LIMIT ?[0m  [["id", 20], ["LIMIT", 1]]
+  ↳ app/controllers/heros_controller.rb:45:in `set_super_hero'
+  Rendering heros/show.html.erb within layouts/application
+  [1m[36mPower Load (0.2ms)[0m  [1m[34mSELECT "powers".* FROM "powers" INNER JOIN "hero_powers" ON "powers"."id" = "hero_powers"."power_id" WHERE "hero_powers"."hero_id" = ?[0m  [["hero_id", 20]]
+  ↳ app/views/heros/show.html.erb:5
+  Rendered heros/show.html.erb within layouts/application (Duration: 2.3ms | Allocations: 1132)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 12ms (Views: 9.8ms | ActiveRecord: 0.4ms | Allocations: 5630)
+
+
+Started GET "/heros/20" for ::1 at 2020-11-02 17:36:35 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by HerosController#show as HTML
+  Parameters: {"id"=>"20"}
+  [1m[36mHero Load (0.5ms)[0m  [1m[34mSELECT "heros".* FROM "heros" WHERE "heros"."id" = ? LIMIT ?[0m  [["id", 20], ["LIMIT", 1]]
+  ↳ app/controllers/heros_controller.rb:45:in `set_super_hero'
+  Rendering heros/show.html.erb within layouts/application
+  [1m[36mPower Load (0.2ms)[0m  [1m[34mSELECT "powers".* FROM "powers" INNER JOIN "hero_powers" ON "powers"."id" = "hero_powers"."power_id" WHERE "hero_powers"."hero_id" = ?[0m  [["hero_id", 20]]
+  ↳ app/views/heros/show.html.erb:5
+  Rendered heros/show.html.erb within layouts/application (Duration: 2.1ms | Allocations: 1393)
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 0.6ms | Allocations: 7073)
+
+
+  
+ActionView::Template::Error (Error: File to import not found or unreadable: bootstrap.
+        on line 17:2 of app/assets/stylesheets/application.scss
+>>  @import "bootstrap";
+
+   -^
+):
+     5:     <%= csrf_meta_tags %>
+     6:     <%= csp_meta_tag %>
+     7: 
+     8:     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+     9:     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    10:   </head>
+    11: 
+  
+app/assets/stylesheets/application.scss:17
+app/views/layouts/application.html.erb:8
+Started GET "/heros/20" for ::1 at 2020-11-02 17:37:02 -0500
+Processing by HerosController#show as HTML
+  Parameters: {"id"=>"20"}
+  [1m[36mHero Load (0.2ms)[0m  [1m[34mSELECT "heros".* FROM "heros" WHERE "heros"."id" = ? LIMIT ?[0m  [["id", 20], ["LIMIT", 1]]
+  ↳ app/controllers/heros_controller.rb:45:in `set_super_hero'
+  Rendering heros/show.html.erb within layouts/application
+  [1m[36mPower Load (0.1ms)[0m  [1m[34mSELECT "powers".* FROM "powers" INNER JOIN "hero_powers" ON "powers"."id" = "hero_powers"."power_id" WHERE "hero_powers"."hero_id" = ?[0m  [["hero_id", 20]]
+  ↳ app/views/heros/show.html.erb:5
+  Rendered heros/show.html.erb within layouts/application (Duration: 1.9ms | Allocations: 1137)
+[Webpacker] Compiling...
+[Webpacker] Compilation failed:
+Hash: 4981352006b48c1dd62f
+Version: webpack 4.44.2
+Time: 1301ms
+Built at: 11/02/2020 5:37:05 PM
+                                     Asset       Size       Chunks                         Chunk Names
+    js/application-4c7f1658d7a2f21ece5b.js    124 KiB  application  [emitted] [immutable]  application
+js/application-4c7f1658d7a2f21ece5b.js.map    139 KiB  application  [emitted] [dev]        application
+                             manifest.json  364 bytes               [emitted]              
+Entrypoint application = js/application-4c7f1658d7a2f21ece5b.js js/application-4c7f1658d7a2f21ece5b.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/packs/application.js] 823 bytes {application} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 3 hidden modules
+
+ERROR in ./app/javascript/packs/application.js
+Module not found: Error: Can't resolve 'bootstrap-sprockets' in '/Users/bryce/Development/code/labs/rails_app_m2m/superhero/app/javascript/packs'
+ @ ./app/javascript/packs/application.js 17:0-30
+
+ERROR in ./app/javascript/packs/application.js
+Module not found: Error: Can't resolve 'jquery3' in '/Users/bryce/Development/code/labs/rails_app_m2m/superhero/app/javascript/packs'
+ @ ./app/javascript/packs/application.js 13:0-18
+
+ERROR in ./app/javascript/packs/application.js
+Module not found: Error: Can't resolve 'popper' in '/Users/bryce/Development/code/labs/rails_app_m2m/superhero/app/javascript/packs'
+ @ ./app/javascript/packs/application.js 15:0-17
+
+Completed 200 OK in 3539ms (Views: 3536.5ms | ActiveRecord: 0.4ms | Allocations: 13589)
+
+
+Started GET "/" for ::1 at 2020-11-02 17:37:07 -0500
+Processing by ApplicationController#home as HTML
+  Rendering application/home.html.erb within layouts/application
+  Rendered application/home.html.erb within layouts/application (Duration: 0.5ms | Allocations: 80)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 12ms (Views: 9.7ms | ActiveRecord: 0.0ms | Allocations: 4293)
+
+
+Started GET "/" for ::1 at 2020-11-02 17:37:08 -0500
+Processing by ApplicationController#home as HTML
+  Rendering application/home.html.erb within layouts/application
+  Rendered application/home.html.erb within layouts/application (Duration: 0.1ms | Allocations: 4)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 27ms (Views: 26.3ms | ActiveRecord: 0.0ms | Allocations: 3885)
+
+
+Started GET "/heros/20" for ::1 at 2020-11-02 17:37:48 -0500
+Processing by HerosController#show as HTML
+  Parameters: {"id"=>"20"}
+  [1m[36mHero Load (0.2ms)[0m  [1m[34mSELECT "heros".* FROM "heros" WHERE "heros"."id" = ? LIMIT ?[0m  [["id", 20], ["LIMIT", 1]]
+  ↳ app/controllers/heros_controller.rb:45:in `set_super_hero'
+  Rendering heros/show.html.erb within layouts/application
+  [1m[36mPower Load (0.2ms)[0m  [1m[34mSELECT "powers".* FROM "powers" INNER JOIN "hero_powers" ON "powers"."id" = "hero_powers"."power_id" WHERE "hero_powers"."hero_id" = ?[0m  [["hero_id", 20]]
+  ↳ app/views/heros/show.html.erb:5
+  Rendered heros/show.html.erb within layouts/application (Duration: 3.4ms | Allocations: 1378)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 14ms (Views: 11.2ms | ActiveRecord: 0.3ms | Allocations: 6768)
+
+
+Started GET "/" for ::1 at 2020-11-02 17:37:57 -0500
+Processing by ApplicationController#home as HTML
+  Rendering application/home.html.erb within layouts/application
+  Rendered application/home.html.erb within layouts/application (Duration: 0.4ms | Allocations: 77)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 10ms (Views: 8.8ms | ActiveRecord: 0.0ms | Allocations: 4247)
+
+
+Started GET "/" for ::1 at 2020-11-02 17:37:58 -0500
+Processing by ApplicationController#home as HTML
+  Rendering application/home.html.erb within layouts/application
+  Rendered application/home.html.erb within layouts/application (Duration: 0.1ms | Allocations: 4)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 7ms (Views: 6.9ms | ActiveRecord: 0.0ms | Allocations: 3883)
+
+
+Started GET "/heros/20" for ::1 at 2020-11-02 17:38:46 -0500
+Processing by HerosController#show as HTML
+  Parameters: {"id"=>"20"}
+  [1m[36mHero Load (0.3ms)[0m  [1m[34mSELECT "heros".* FROM "heros" WHERE "heros"."id" = ? LIMIT ?[0m  [["id", 20], ["LIMIT", 1]]
+  ↳ app/controllers/heros_controller.rb:45:in `set_super_hero'
+  Rendering heros/show.html.erb within layouts/application
+  [1m[36mPower Load (0.1ms)[0m  [1m[34mSELECT "powers".* FROM "powers" INNER JOIN "hero_powers" ON "powers"."id" = "hero_powers"."power_id" WHERE "hero_powers"."hero_id" = ?[0m  [["hero_id", 20]]
+  ↳ app/views/heros/show.html.erb:5
+  Rendered heros/show.html.erb within layouts/application (Duration: 2.0ms | Allocations: 1373)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 10ms (Views: 7.4ms | ActiveRecord: 0.4ms | Allocations: 6760)
+
+
+Started GET "/heros/20" for ::1 at 2020-11-02 17:39:55 -0500
+Processing by HerosController#show as HTML
+  Parameters: {"id"=>"20"}
+  [1m[36mHero Load (0.3ms)[0m  [1m[34mSELECT "heros".* FROM "heros" WHERE "heros"."id" = ? LIMIT ?[0m  [["id", 20], ["LIMIT", 1]]
+  ↳ app/controllers/heros_controller.rb:45:in `set_super_hero'
+  Rendering heros/show.html.erb within layouts/application
+  [1m[36mPower Load (0.5ms)[0m  [1m[34mSELECT "powers".* FROM "powers" INNER JOIN "hero_powers" ON "powers"."id" = "hero_powers"."power_id" WHERE "hero_powers"."hero_id" = ?[0m  [["hero_id", 20]]
+  ↳ app/views/heros/show.html.erb:5
+  Rendered heros/show.html.erb within layouts/application (Duration: 4.4ms | Allocations: 1373)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 16ms (Views: 12.8ms | ActiveRecord: 0.7ms | Allocations: 6791)
+
+
+Started GET "/login" for ::1 at 2020-11-02 17:39:57 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/login"):
+  
+actionpack (6.0.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.4) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.4) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.4) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/heros/20" for ::1 at 2020-11-02 17:40:13 -0500
+Processing by HerosController#show as HTML
+  Parameters: {"id"=>"20"}
+  [1m[36mHero Load (0.1ms)[0m  [1m[34mSELECT "heros".* FROM "heros" WHERE "heros"."id" = ? LIMIT ?[0m  [["id", 20], ["LIMIT", 1]]
+  ↳ app/controllers/heros_controller.rb:45:in `set_super_hero'
+  Rendering heros/show.html.erb within layouts/application
+  [1m[36mPower Load (0.2ms)[0m  [1m[34mSELECT "powers".* FROM "powers" INNER JOIN "hero_powers" ON "powers"."id" = "hero_powers"."power_id" WHERE "hero_powers"."hero_id" = ?[0m  [["hero_id", 20]]
+  ↳ app/views/heros/show.html.erb:5
+  Rendered heros/show.html.erb within layouts/application (Duration: 3.2ms | Allocations: 1373)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 16ms (Views: 11.8ms | ActiveRecord: 0.3ms | Allocations: 6795)
+
+
+Started GET "/powers" for ::1 at 2020-11-02 17:40:14 -0500
+Processing by PowersController#index as HTML
+  Rendering powers/index.html.erb within layouts/application
+  [1m[36mPower Load (0.2ms)[0m  [1m[34mSELECT "powers".* FROM "powers"[0m
+  ↳ app/views/powers/index.html.erb:4
+  Rendered powers/index.html.erb within layouts/application (Duration: 3.0ms | Allocations: 1189)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 12ms (Views: 10.7ms | ActiveRecord: 0.2ms | Allocations: 5693)
+
+
+Started GET "/powers" for ::1 at 2020-11-02 17:40:36 -0500
+Processing by PowersController#index as HTML
+  Rendering powers/index.html.erb within layouts/application
+  [1m[36mPower Load (0.2ms)[0m  [1m[34mSELECT "powers".* FROM "powers"[0m
+  ↳ app/views/powers/index.html.erb:4
+  Rendered powers/index.html.erb within layouts/application (Duration: 2.1ms | Allocations: 1165)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 12ms (Views: 10.0ms | ActiveRecord: 0.2ms | Allocations: 6071)
+
+
+Started GET "/heros" for ::1 at 2020-11-02 17:40:38 -0500
+Processing by HerosController#index as HTML
+  Rendering heros/index.html.erb within layouts/application
+  [1m[36mHero Load (0.4ms)[0m  [1m[34mSELECT "heros".* FROM "heros"[0m
+  ↳ app/views/heros/index.html.erb:4
+  Rendered heros/index.html.erb within layouts/application (Duration: 3.0ms | Allocations: 1110)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 12ms (Views: 11.1ms | ActiveRecord: 0.4ms | Allocations: 5612)
+
+
+Started GET "/powers" for ::1 at 2020-11-02 17:40:39 -0500
+Processing by PowersController#index as HTML
+  Rendering powers/index.html.erb within layouts/application
+  [1m[36mPower Load (0.2ms)[0m  [1m[34mSELECT "powers".* FROM "powers"[0m
+  ↳ app/views/powers/index.html.erb:4
+  Rendered powers/index.html.erb within layouts/application (Duration: 2.2ms | Allocations: 1016)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 13ms (Views: 11.7ms | ActiveRecord: 0.2ms | Allocations: 4956)
+
+
+Started GET "/" for ::1 at 2020-11-02 17:40:41 -0500
+Processing by ApplicationController#home as HTML
+  Rendering application/home.html.erb within layouts/application
+  Rendered application/home.html.erb within layouts/application (Duration: 0.6ms | Allocations: 77)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 14ms (Views: 13.1ms | ActiveRecord: 0.0ms | Allocations: 4286)
+
+
+Started GET "/" for ::1 at 2020-11-02 17:40:52 -0500
+Processing by ApplicationController#home as HTML
+  Rendering application/home.html.erb within layouts/application
+  Rendered application/home.html.erb within layouts/application (Duration: 0.3ms | Allocations: 77)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 10ms (Views: 8.2ms | ActiveRecord: 0.0ms | Allocations: 4661)
+
+
+Started GET "/heros" for ::1 at 2020-11-02 17:40:54 -0500
+Processing by HerosController#index as HTML
+  Rendering heros/index.html.erb within layouts/application
+  [1m[36mHero Load (0.1ms)[0m  [1m[34mSELECT "heros".* FROM "heros"[0m
+  ↳ app/views/heros/index.html.erb:4
+  Rendered heros/index.html.erb within layouts/application (Duration: 1.9ms | Allocations: 1092)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 12ms (Views: 10.1ms | ActiveRecord: 0.1ms | Allocations: 5611)
+
+
+Started GET "/powers" for ::1 at 2020-11-02 17:40:59 -0500
+Processing by PowersController#index as HTML
+  Rendering powers/index.html.erb within layouts/application
+  [1m[36mPower Load (0.3ms)[0m  [1m[34mSELECT "powers".* FROM "powers"[0m
+  ↳ app/views/powers/index.html.erb:4
+  Rendered powers/index.html.erb within layouts/application (Duration: 4.2ms | Allocations: 1165)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 17ms (Views: 15.4ms | ActiveRecord: 0.3ms | Allocations: 5670)
+
+
+Started GET "/heros" for ::1 at 2020-11-02 17:41:01 -0500
+Processing by HerosController#index as HTML
+  Rendering heros/index.html.erb within layouts/application
+  [1m[36mHero Load (0.2ms)[0m  [1m[34mSELECT "heros".* FROM "heros"[0m
+  ↳ app/views/heros/index.html.erb:4
+  Rendered heros/index.html.erb within layouts/application (Duration: 2.9ms | Allocations: 955)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 13ms (Views: 11.1ms | ActiveRecord: 0.2ms | Allocations: 4892)
+
+
+Started GET "/powers" for ::1 at 2020-11-02 17:41:02 -0500
+Processing by PowersController#index as HTML
+  Rendering powers/index.html.erb within layouts/application
+  [1m[36mPower Load (0.4ms)[0m  [1m[34mSELECT "powers".* FROM "powers"[0m
+  ↳ app/views/powers/index.html.erb:4
+  Rendered powers/index.html.erb within layouts/application (Duration: 3.5ms | Allocations: 1010)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 13ms (Views: 11.1ms | ActiveRecord: 0.4ms | Allocations: 4943)
+
+
+Started GET "/" for ::1 at 2020-11-02 17:41:07 -0500
+Processing by ApplicationController#home as HTML
+  Rendering application/home.html.erb within layouts/application
+  Rendered application/home.html.erb within layouts/application (Duration: 0.1ms | Allocations: 4)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 21ms (Views: 19.9ms | ActiveRecord: 0.0ms | Allocations: 3923)
+
+
+Started GET "/" for ::1 at 2020-11-02 17:42:08 -0500
+Processing by ApplicationController#home as HTML
+  Rendering application/home.html.erb within layouts/application
+  Rendered application/home.html.erb within layouts/application (Duration: 0.3ms | Allocations: 82)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 9ms (Views: 7.7ms | ActiveRecord: 0.0ms | Allocations: 4673)
+
+
+Started GET "/heros" for ::1 at 2020-11-02 17:43:00 -0500
+Processing by HerosController#index as HTML
+  Rendering heros/index.html.erb within layouts/application
+  [1m[36mHero Load (0.1ms)[0m  [1m[34mSELECT "heros".* FROM "heros"[0m
+  ↳ app/views/heros/index.html.erb:4
+  Rendered heros/index.html.erb within layouts/application (Duration: 2.1ms | Allocations: 1134)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 14ms (Views: 12.4ms | ActiveRecord: 0.1ms | Allocations: 6042)
+
+
+Started GET "/heros/new" for ::1 at 2020-11-02 17:43:02 -0500
+Processing by HerosController#new as HTML
+  Rendering heros/new.html.erb within layouts/application
+  Rendered heros/_form.html.erb (Duration: 0.7ms | Allocations: 1208)
+  Rendered heros/new.html.erb within layouts/application (Duration: 1.6ms | Allocations: 1510)
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms | Allocations: 2079)
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    1: <%= form_for @super_hero do |p| %>
+    2:     <%= p.label :name%>
+    3:     <%= p.text_field :name%>
+    4:     <%= p.label :city%>
+  
+app/views/heros/_form.html.erb:1
+app/views/heros/new.html.erb:3
+Started GET "/heros/new" for ::1 at 2020-11-02 17:43:30 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by HerosController#new as HTML
+  Rendering heros/new.html.erb within layouts/application
+  Rendered heros/_form.html.erb (Duration: 2.8ms | Allocations: 846)
+  Rendered heros/new.html.erb within layouts/application (Duration: 3.1ms | Allocations: 910)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 22ms (Views: 9.9ms | ActiveRecord: 1.2ms | Allocations: 9778)
+
+
+Started GET "/" for ::1 at 2020-11-02 17:43:32 -0500
+Processing by ApplicationController#home as HTML
+  Rendering application/home.html.erb within layouts/application
+  Rendered application/home.html.erb within layouts/application (Duration: 0.5ms | Allocations: 77)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 8ms (Views: 7.4ms | ActiveRecord: 0.0ms | Allocations: 4285)
+
+
+Started GET "/heros" for ::1 at 2020-11-02 17:43:34 -0500
+Processing by HerosController#index as HTML
+  Rendering heros/index.html.erb within layouts/application
+  [1m[36mHero Load (0.2ms)[0m  [1m[34mSELECT "heros".* FROM "heros"[0m
+  ↳ app/views/heros/index.html.erb:4
+  Rendered heros/index.html.erb within layouts/application (Duration: 1.9ms | Allocations: 1006)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 23ms (Views: 22.0ms | ActiveRecord: 0.2ms | Allocations: 4980)
+
+
+Started GET "/powers" for ::1 at 2020-11-02 17:43:34 -0500
+Processing by PowersController#index as HTML
+  Rendering powers/index.html.erb within layouts/application
+  [1m[36mPower Load (0.4ms)[0m  [1m[34mSELECT "powers".* FROM "powers"[0m
+  ↳ app/views/powers/index.html.erb:4
+  Rendered powers/index.html.erb within layouts/application (Duration: 8.5ms | Allocations: 4466)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 18ms (Views: 12.8ms | ActiveRecord: 1.3ms | Allocations: 10185)
+
+

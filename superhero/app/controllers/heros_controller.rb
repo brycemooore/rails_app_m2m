@@ -1,5 +1,5 @@
 class HerosController < ApplicationController
-    before_action :set_super_hero, only: [:show, :edit, :update, :destroy]
+    before_action :set_super_hero, only: [ :power_select, :show, :edit, :update, :destroy]
     
     def index
         @super_heros = Hero.all
@@ -9,7 +9,7 @@ class HerosController < ApplicationController
     end
 
     def new
-        @hero = Hero.new 
+        @super_hero = Hero.new 
     end 
 
     def create
@@ -31,13 +31,14 @@ class HerosController < ApplicationController
         redirect_to heros_path
     end
 
-    def add_power_to_hero
+    def power_select
+        # redirect_to hero_path(@super_hero.id)
     end
     
     private
 
     def get_params
-        params.require(:hero).permit(:name, :city)
+        params.require(:hero).permit(:name, :city, :power_ids => [])
     end 
 
     def set_super_hero

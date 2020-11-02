@@ -3,6 +3,8 @@ Rails.application.routes.draw do
 
   resources :powers, :heros 
 
+  get '/heros/:id/select-power', to: 'heros#power_select', as: 'power_select'
+
   # get '/heros', to: 'heros#index'
   # get '/heros/new', to: 'heros#new'
   # get '/heros/:id', to: 'heros#show', as: 'hero'
