@@ -1,0 +1,9 @@
+<h1><%= @super_hero.name%></h1>
+<h3><%= @super_hero.city%></h3>
+<h3>Powers</h3>
+<ul>
+    <% @super_hero.powers.each do |power|%>
+        <li><%= link_to power.title, power_path(power.id)%></li>
+    <% end %>
+</ul>
+<h3><%= link_to "All heroes", heros_path%></h3>
